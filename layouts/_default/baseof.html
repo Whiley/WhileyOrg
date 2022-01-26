@@ -2,28 +2,6 @@
 <html lang="en">
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1"/>
-    {{ if .Page.Params.metatitle }}
-    <meta property="og:title" content="{{.Page.Params.metatitle}}"/>
-    <meta name="twitter:title" content="{{.Page.Params.metatitle}}"/>
-    {{ else }}
-    <meta property="og:title" content="{{.Page.Title}}"/>
-    <meta name="twitter:title" content="{{.Page.Title}}"/>
-    {{ end }}
-    {{ if .Page.Params.metatxt }}
-    <meta property="og:description" content="{{.Page.Params.metatxt}}"/>
-    <meta name="twitter:description" content="{{.Page.Params.metatxt}}"/>
-    {{ end }}    
-    {{ if .Page.Params.metaimg }}
-    <meta property="og:image" content="{{.Site.BaseURL}}{{.Page.Params.metaimg}}"/>
-    <meta name="twitter:card" content="summary_large_image"/>    
-    <meta name="twitter:image" content="{{.Site.BaseURL}}{{.Page.Params.metaimg}}"/>
-    {{ end }}
-    {{ if .Page.Params.twitterimgalt }}
-    <meta name="twitter:image:alt" content="{{.Site.BaseURL}}{{.Page.Params.twitterimgalt}}"/>
-    {{ end }}
-    {{ if .Page.Params.twittersite }}
-    <meta name="twitter:site" content="{{.Page.Params.twittersite}}"/>
-    {{ end }}
     <meta property="og:url" content="{{.Permalink}}"/>
     <title>Whiley
       {{ if .Title }}
@@ -36,60 +14,18 @@
     <link rel="stylesheet" href="{{ .Site.BaseURL }}css/style.css">
   </head>
   <body>
-    <script>
-      "use strict";
-      function clearMenu() {
-        var q = window.matchMedia("(max-width: 992px)");
-        if(q.matches) {
-            var c = document.getElementById("menu-content");
-            var m = document.getElementById("menu");
-            c.style.display = 'none';
-            m.style.filter = '';     
-	}
-      }      
-      function toggleMenu() {
-        var q = window.matchMedia("(max-width: 992px)");
-        if(q.matches) {
-          var c = document.getElementById("menu-content");
-          var m = document.getElementById("menu");
-          if(c.style.display === 'block') {
-            c.style.display = 'none';
-            m.style.filter = '';     
-          } else {
-            c.style.display = 'block';
-            m.style.filter = "brightness(0.8)";
-          }
-	}
-      }
-      function toggleList(element) {
-	  element.style.display="none";
-	  var parent = element.parentNode;
-	  var items = parent.childNodes;
-	  for(var i=0;i<items.length;++i) {
-	      var item = items[i];
-	      if(item.classList && item.classList.contains("hidden")) {
-		  if(item.style.display === 'block') {
-		      item.style.display="none";
-		  } else {
-		      item.style.display="block";
-		  }
-	      }
-	}
-      }
-    </script>    
     <header class="topbar">
-      <div class="topbar-header" onclick="clearMenu()">
+      <div class="topbar-header">
 	<div class="topbar-title">Whiley</div>
 	<div class="topbar-subtitle"></div>
       </div>
-      <div class="topbar-social"  onclick="clearMenu()">	
+      <div class="topbar-social">	
 	<a href="https://github.com/Whiley"><i class="fa fa-github" aria-hidden="true"></i></a>
 	<a href="https://twitter.com/WhileyLang"><i class="fa fa-twitter" aria-hidden="true"></i></a>
 	<a href="https://www.youtube.com/channel/UCTOITk-LBo8DnDKgU34fa4w"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>	
       </div>
       <div class="topbar-menu">
-	<div id="menu" onclick="toggleMenu()">
-	  <div id="menu-icon"><img src="{{.Site.BaseURL}}images/menu.png" alt="Menu"/></div>
+	<div id="menu">
 	  <div id="menu-content">
 	    {{ $p := .Title }}
 	    {{ range .Site.Sections }}

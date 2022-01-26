@@ -1,6 +1,6 @@
 baseURL = "https://whiley.github.io/WhileyOrg/"
 languageCode = "en-nz"
-title = "Dave's Homepage"
+title = "Whiley Homepage"
 googleAnalytics = "UA-5582165-5"
 paginate = 10
 enableRobotsTXT = true
