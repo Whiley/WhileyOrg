@@ -1,0 +1,4 @@
+{{ define "main" }}
+{{ $talks := where .Pages.ByDate.Reverse ".Params.mine" true }}
+{{ partial "lists.html" (dict "items" $talks "max" 8 "partial" "talk.html") }}
+{{ end }}

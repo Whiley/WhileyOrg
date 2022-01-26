@@ -1,0 +1,14 @@
+baseURL = "https://whileydave.com/"
+languageCode = "en-nz"
+title = "Dave's Homepage"
+googleAnalytics = "UA-5582165-7"
+paginate = 10
+enableRobotsTXT = true
+summaryLength = 30
+#pygmentsUseClassic = true
+pygmentsStyle = "manni"
+#pygmentsUseClasses = true
+#pygmentsCodeFences = true
+
+[permalinks]
+blog = "/:year/:month/:day/:title/"

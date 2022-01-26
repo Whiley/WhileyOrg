@@ -1,0 +1,83 @@
+#menu {
+    /* ensure pointer cursor */
+    cursor: pointer;
+    /* set position for child */
+    position: relative;
+    /* set menu color */
+    background: inherit;
+}
+
+#menu-content {
+    background: inherit;
+    margin: 0em;
+    padding: 0em;
+    /* make sure in front */
+    z-index: 1;
+}
+
+#menu-content a {
+    color: #5b4b25;
+    /* styling */
+    padding: 0.25em 0.25em;
+    /* remove link underline */
+    text-decoration: none;
+    /* make sure in front */
+    z-index: 2;
+}
+
+#menu-content a:hover {
+    background: #000000;
+    color: #d5c397;
+}
+
+#menu-content a.selected {
+    background: #000000;
+    color: #d5c397;
+}
+
+@media only screen and (max-width: 992px) {
+    #menu {
+	margin: 0em;
+	padding: 0em;
+	height: 100%;	
+    }
+    #menu-icon {
+	height: 100%;
+    }
+    #menu-icon img {	
+	width: 28px;
+	height: 28px;
+	margin: 0.25em 0.5em 0.25em 0.5em;
+	padding: 0.25em 0.25em 0.25em 0.25em;
+    }
+    #menu-content {
+	/* position relative to parent */
+	position: absolute;
+	 /* ensure fully below parent */
+	top: 100%;
+	right: 0%;
+	 /* help with visibility */
+	box-shadow: 16px 16px 16px 0px rgba(0,0,0,0.5);
+	/* ensure fills out space */
+	display: none;
+    }
+    #menu-content a {
+	/* force to fill out */
+	display: block;
+	/* separate menu items */
+	padding: 1em;
+    }	
+}
+
+@media only screen and (min-width: 992px) {
+    #menu-content {
+	display: inline-block;
+    }
+    #menu-content a {
+	/* force to fill out */
+	display: inline-block;
+    }
+    #menu-icon {
+	display: none;
+    }
+}
