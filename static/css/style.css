@@ -15,11 +15,17 @@ pre code {
 hr {
     border: 1px solid #a28744;
 }
+.bigbutton {
+    background: #fff5cc;
+    font-size: 14pt;
+    padding: 1em 2em;
+    border: 0px;
+    border-radius: 0.5em;    
+}
 a:link {
     text-decoration: underline dotted;
     color: #a28744;
 }
-
 a:visited {
     color: #6c5a2d;
 }

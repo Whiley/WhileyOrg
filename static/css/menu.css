@@ -11,28 +11,23 @@
     background: inherit;
     margin: 0em;
     padding: 0em;
-    /* make sure in front */
-    z-index: 1;
 }
 
 #menu-content a {
-    color: #5b4b25;
+    color: #000000;
     /* styling */
-    padding: 0.25em 0.25em;
+    padding: 0.25em 1em;
     /* remove link underline */
-    text-decoration: none;
-    /* make sure in front */
-    z-index: 2;
+    text-decoration: underline;
 }
 
 #menu-content a:hover {
-    background: #000000;
-    color: #d5c397;
+    color: #5b4b25;
+    text-decoration: none;    
 }
 
 #menu-content a.selected {
-    background: #000000;
-    color: #d5c397;
+    color: #5b4b25;
 }
 
 @media only screen and (max-width: 992px) {
