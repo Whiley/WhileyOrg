@@ -1,14 +1,11 @@
-baseURL = "https://whileydave.com/"
+baseURL = "https://whiley.github.io/WhileyOrg/"
 languageCode = "en-nz"
 title = "Dave's Homepage"
-googleAnalytics = "UA-5582165-7"
+googleAnalytics = "UA-5582165-5"
 paginate = 10
 enableRobotsTXT = true
 summaryLength = 30
-#pygmentsUseClassic = true
 pygmentsStyle = "manni"
-#pygmentsUseClasses = true
-#pygmentsCodeFences = true
 
 [permalinks]
 blog = "/:year/:month/:day/:title/"
