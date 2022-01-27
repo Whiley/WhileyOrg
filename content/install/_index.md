@@ -15,7 +15,7 @@ draft: false
 <h2>Overview</h2>
 
 Whiley is currently written in a combination of <a
-href="rust-lang.org/">Rust</a> and <a
+href="https://rust-lang.org/">Rust</a> and <a
 href="https://www.java.com/">Java</a>.  This is for legacy reasons,
 since the compiler was originally written in Java and is now being
 migrated to Rust.  <b>As such you need to have Java installed on your
