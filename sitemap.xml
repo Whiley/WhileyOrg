@@ -1,1 +1,43 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml"><url><loc>https://whiley.github.io/WhileyOrg/</loc><lastmod>2020-09-01T00:00:00+00:00</lastmod></url><url><loc>https://whiley.github.io/WhileyOrg/news/00_test/</loc><lastmod>2020-09-01T00:00:00+00:00</lastmod></url><url><loc>https://whiley.github.io/WhileyOrg/install/</loc><lastmod>2017-10-13T20:31:39-05:00</lastmod></url><url><loc>https://whiley.github.io/WhileyOrg/learn/</loc><lastmod>2017-10-13T20:31:39-05:00</lastmod></url><url><loc>https://whiley.github.io/WhileyOrg/news/</loc><lastmod>2017-10-13T20:31:39-05:00</lastmod></url><url><loc>https://whiley.github.io/WhileyOrg/play/</loc><lastmod>2017-10-13T20:31:39-05:00</lastmod></url><url><loc>https://whiley.github.io/WhileyOrg/categories/</loc></url><url><loc>https://whiley.github.io/WhileyOrg/tags/</loc></url></urlset>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://whiley.github.io/WhileyOrg/</loc>
+    <lastmod>2020-09-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://whiley.github.io/WhileyOrg/news/00_test/</loc>
+    <lastmod>2020-09-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://whiley.github.io/WhileyOrg/install/</loc>
+    <lastmod>2017-10-13T20:31:39-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://whiley.github.io/WhileyOrg/learn/</loc>
+    <lastmod>2017-10-13T20:31:39-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://whiley.github.io/WhileyOrg/news/</loc>
+    <lastmod>2017-10-13T20:31:39-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://whiley.github.io/WhileyOrg/play/</loc>
+    <lastmod>2017-10-13T20:31:39-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://whiley.github.io/WhileyOrg/categories/</loc>
+  </url>
+  
+  <url>
+    <loc>https://whiley.github.io/WhileyOrg/tags/</loc>
+  </url>
+  
+</urlset>
