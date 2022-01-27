@@ -2,7 +2,7 @@ h1,h2 { line-height: 100%; }
 h1 {
     font-family: Cursive;
     font-size: 36pt;
-    margin: 0.5em 0;
+    margin: 0em 0 0 0;
 }
 code {
     border: 1px solid #e8e0c9;
@@ -27,7 +27,7 @@ pre code {
 hr {
     border: 1px solid #a28744;
 }
-.bigbutton {
+button {
     background: #fff5cc;
     color: #594b26;        
     font-size: 14pt;
@@ -35,6 +35,9 @@ hr {
     border: 0px;
     border-radius: 0.5em;
     border: 1px solid #a28744;
+}
+button:hover {
+    background: #a28744;
 }
 .code {
     font-family: "monospace";
