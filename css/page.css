@@ -3,7 +3,8 @@ html, body {
     padding: 0px;
     background: #ffffff;
     height: 100%;
-    font-family: Helvetica; 
+    font-family: Helvetica;
+    color: #594b26;    
 }
 .container {
     width: 100%;
@@ -14,9 +15,17 @@ html, body {
     border-radius: 10px;
 }
 .content {
-    color: #594b26;
     margin: 0;
     padding: 0;
+}
+.logo {
+    background: #6c5a2d;
+    color: #d5c397;
+    font-family: monospace;
+    font-size: 0.5em;
+    font-weight: bold;
+    padding: 1em 0em 0em 1em;
+    border-radius: 2px;    
 }
 .topbar {
     display: flex;
@@ -24,21 +33,41 @@ html, body {
     background: #d5c397;
     margin: 0em;
 }
-.topbar-title {
+.topbar-title {    
     white-space: nowrap;
     font-weight: bold;
     padding: 0.5em 0.5em 0.5em 0.25em;
+}
+.topbar-sep {
     flex-grow: 1;
+}
+.topbar-title a:link {
+    text-decoration: none;
+    color: #594b26;    
+}
+.topbar-title a:visited {
+    text-decoration: none;
+    color: #594b26;    
 }
 .topbar-menu {
     background: inherit;
     padding: 0.25em;
     margin: 0;
 }
-.banner {
+.banner {  
     background: #d5c397;
+}
+.alternate {  
+    background: #eeeeee;
+}
+.section {  
+    display: flex;
+    padding: 0 10% 0 10%;
+    width: 80%;
+}
+.column {
     width: 100%;
-    padding: 2em;
+    padding: 1em;
 }
 @media only screen and (max-width: 992px) {    
     .content { width: 90%; padding: 5%; font-size: 14pt; line-height: 130%; }
