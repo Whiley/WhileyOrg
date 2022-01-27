@@ -23,9 +23,9 @@ html, body {
     background: #6c5a2d;
     color: #d5c397;
     font-family: monospace;
-    font-size: 0.5em;
+    font-size: 0.75em;
     font-weight: bold;
-    padding: 1em 0em 0em 1em;
+    padding: 1.5em 0em 0em 1.5em;
     border-radius: 2px;    
 }
 .topbar {

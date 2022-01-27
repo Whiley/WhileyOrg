@@ -1,9 +1,8 @@
 h1,h2 { line-height: 100%; }
 h1 {
-    margin: 0;
-
     font-family: Cursive;
-    font-size: 48pt;
+    font-size: 36pt;
+    margin: 0.5em 0;
 }
 code {
     border: 1px solid #e8e0c9;
@@ -44,6 +43,7 @@ hr {
     border-radius: 0.5em;    
     background: #fff5cc;
     padding: 1em;
+    margin: 1em 0em;
 }
 a:link {
     text-decoration: underline dotted;

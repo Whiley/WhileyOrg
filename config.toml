@@ -6,7 +6,6 @@ paginate = 10
 enableRobotsTXT = true
 summaryLength = 30
 pygmentsStyle = "manni"
-keepWhitespace = true
 
 [permalinks]
 blog = "/:year/:month/:day/:title/"
