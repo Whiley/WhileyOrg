@@ -19,6 +19,7 @@ html, body {
     padding: 0;
 }
 .logo {
+    transform: rotate(-5deg);    
     background: #6c5a2d;
     color: #d5c397;
     font-family: monospace;
