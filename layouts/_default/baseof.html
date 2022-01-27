@@ -8,14 +8,18 @@
       ({{.Title}})
       {{ end }}
     </title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script type="text/javascript" src="js/ace.js" charset="utf-8"></script>
+    <script type="text/javascript" src="js/mode-whiley.js" charset="utf-8"></script>    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">    
     <link rel="stylesheet" href="{{ .Site.BaseURL }}css/page.css">
     <link rel="stylesheet" href="{{ .Site.BaseURL }}css/menu.css">
     <link rel="stylesheet" href="{{ .Site.BaseURL }}css/style.css">
+    <link rel="stylesheet" href="{{ .Site.BaseURL }}css/whiley.css">    
   </head>
   <body>
     <header class="topbar">
-      <div class="topbar-title">Whiley</div>
+      <div class="topbar-title"><a href="{{ .Site.BaseURL }}"><div class="logo">Wy</div></a></div>
+      <div class="topbar-sep"></div>
       <div class="topbar-menu">
 	<div id="menu">
 	  <div id="menu-content">

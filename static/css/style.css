@@ -1,4 +1,10 @@
 h1,h2 { line-height: 100%; }
+h1 {
+    margin: 0;
+
+    font-family: Cursive;
+    font-size: 48pt;
+}
 code {
     border: 1px solid #e8e0c9;
     border-radius: 0.25em;
@@ -12,15 +18,32 @@ pre code {
     border-radius: 0.5em;
     padding: 0.5em;
 }
+#editor {    
+    width: 100%;
+    height: 100%;
+    border: 1px solid #e8e0c9;
+    border-radius: 0.5em;
+    padding: 0em;    
+}
 hr {
     border: 1px solid #a28744;
 }
 .bigbutton {
     background: #fff5cc;
+    color: #594b26;        
     font-size: 14pt;
     padding: 1em 2em;
     border: 0px;
+    border-radius: 0.5em;
+    border: 1px solid #a28744;
+}
+.code {
+    font-family: "monospace";
+    white-space: pre;
+    border: 1px solid #a28744;
     border-radius: 0.5em;    
+    background: #fff5cc;
+    padding: 1em;
 }
 a:link {
     text-decoration: underline dotted;
@@ -29,7 +52,16 @@ a:link {
 a:visited {
     color: #6c5a2d;
 }
+.ticklist {
+    list-style: none;
+}
+.ticklist li {
+    padding: 0.5em;
+}
 
+.ticklist li:before {
+ content: '✓ '; 
+}
 .project-title {
     border: 0px dashed black;
 }
