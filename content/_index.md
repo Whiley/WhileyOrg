@@ -22,7 +22,7 @@ banner: "A language for writing correct software!"
 function max(int x, int y) -> (int r)
 // Ensure return not smaller than parameters
 ensures (r >= x) && (r >= y)
-// Ensure only returna parameter
+// Ensure a parameter returned
 ensures (r == x) || (r == y): 
    if x >= y:
       return x
