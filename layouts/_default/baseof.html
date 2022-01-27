@@ -28,7 +28,11 @@
 	    {{ if eq .Title $p }}
 	    <a class="selected" href="{{.Permalink}}">{{.Title}}</a>
 	    {{ else }}
+	    {{ if .Params.redirect }}
+	    <a href="{{.Params.redirect}}">{{.Title}}</a>	    
+	    {{ else }}
 	    <a href="{{.Permalink}}">{{.Title}}</a>
+	    {{ end }}
 	    {{ end }}
 	    {{ end }}
 	  </div>

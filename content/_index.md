@@ -13,8 +13,8 @@ banner: "A language for writing correct software!"
 <li>Automated testing</li>
 <li>Easy to learn</li>
 </ul>
-<button class="bigbutton">Download</button>
-<button class="bigbutton">Get Started</button>
+<button onclick='window.location.href="install"'>Install</button>
+<button onclick='window.location.href="learn"'>Get Started</button>
 </div>
 <div class="column">
 <div id="editor" class="ace-whiley">/**
