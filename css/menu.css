@@ -15,14 +15,14 @@
 
 #menu-content a {
     /* styling */
-    padding: 0.25em 1em;
+    padding: 0.5em 1em;
     /* remove link underline */
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 #menu-content a:hover {
-    color: #5b4b25;
-    text-decoration: none;    
+    color: #fff5cc;
+    background: #6c5a2d;
 }
 
 #menu-content a.selected {
