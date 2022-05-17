@@ -57,10 +57,6 @@ a:visited {
 .ticklist {
     list-style: none;
 }
-.ticklist li {
-    padding: 0.5em;
-}
-
 .ticklist li:before {
  content: '✓ '; 
 }
@@ -188,6 +184,8 @@ a:visited {
     .youtube { width: 280px; height: 158px; }
     .image { width: 100%; text-align: center; margin: 1em 0 1em 0; }
     .image > img { width: 100%; height: auto; }
+    .ticklist { padding: 0; margin: 0.25em; }    
+    .ticklist li { padding: 0; margin: 1em 0.25em; }    
 }
 
 @media only screen and (min-width: 768px) {
@@ -203,4 +201,5 @@ a:visited {
     .talk-embedding { grid-column: 2; grid-row: 1 / span 2; }
     .download div { padding: 1em 1em; }
     .youtube { width: 560px; height: 315px; }
+    .ticklist li { padding: 0.5em; }    
 }
