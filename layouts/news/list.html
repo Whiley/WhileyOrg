@@ -2,6 +2,14 @@
 {{ $odd := false }}
 {{ $lc := "" }}
 
+<section class="banner">
+<div class="column">
+<h1>News</h1>
+</div>
+</section>
+
+<br/>
+
 <div class="list">
   {{ range .Pages }}
   {{ if eq $odd false }}{{ $lc = "list-even" }}{{ else }}{{ $lc = "list-odd" }}{{ end }}

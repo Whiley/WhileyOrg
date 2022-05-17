@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="{{ .Site.BaseURL }}css/whiley.css">    
   </head>
   <body>
+    <div class="page">
     <header class="topbar">
       <div class="topbar-title"><a href="{{ .Site.BaseURL }}"><div class="logo">Wy</div></a></div>
       <div class="topbar-sep"></div>
@@ -44,6 +45,7 @@
 	{{ block "main" . }}
 	{{ end }}
       </div>
+    </div>
     </div>
     {{ template "_internal/google_analytics.html" . }}    
   </body>

@@ -6,14 +6,7 @@ banner: "A language for writing correct software!"
 <div class="column">
 <h1>Whiley</h1>
 
-<i><h3>High integrity software at scale</h3></i>
-<ul class="ticklist">
-<li>Open source</li>
-<li>Specification & verification</li>
-<li>Automated testing</li>
-<li>Easy to learn</li>
-</ul>
-<button onclick='window.location.href="install"'>Install</button>
+<i><h3>Creating high integrity software at scale.</h3></i>
 <button onclick='window.location.href="learn"'>Get Started</button>
 </div>
 <div class="column">

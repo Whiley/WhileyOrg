@@ -3,8 +3,12 @@ html, body {
     padding: 0px;
     background: #ffffff;
     height: 100%;
-    font-family: Helvetica;
-    color: #594b26;    
+    font-family: "Trebuchet MS","Lucida Grande",arial;
+    color: #594b26;
+}
+.page {
+    width: 70%;
+    margin: auto;
 }
 .container {
     width: 100%;
@@ -16,22 +20,21 @@ html, body {
 }
 .content {
     margin: 0;
-    padding: 0;
 }
 .logo {
     transform: rotate(-5deg);    
     background: #6c5a2d;
     color: #d5c397;
-    font-family: monospace;
-    font-size: 0.75em;
+    font-family: "monospace";
+    font-size: 0.4em;
     font-weight: bold;
-    padding: 1.5em 0em 0em 1.5em;
+    padding: 1em 0em 0em 1em;
     border-radius: 2px;    
 }
 .topbar {
     display: flex;
     flex-wrap: nowrap;    
-    background: #d5c397;
+    background: #d5c397; 
     margin: 0em;
 }
 .topbar-title {    
@@ -63,12 +66,12 @@ html, body {
 }
 .section {  
     display: flex;
-    padding: 0 10% 0 10%;
-    width: 80%;
+    padding: 0 0% 0 0%;
+    width: 100%;
 }
 .column {
     width: 100%;
-    padding: 1em;
+    padding: 1em 1.5em;
 }
 @media only screen and (max-width: 992px) {    
     .content { width: 90%; padding: 5%; font-size: 14pt; line-height: 130%; }

@@ -6,13 +6,12 @@ draft: false
 
 {{< section class="banner">}}
 <div class="column">
-<h1>Install Whiley</h1>
+<h1>Install</h1>
 </div>
 {{</section>}}
 
 {{<section>}}
 <div class="column">
-<h2>Overview</h2>
 
 Whiley is currently written in a combination of <a
 href="https://rust-lang.org/">Rust</a> and <a
@@ -41,6 +40,7 @@ guide for what to do next.
 </div>
 {{</section>}}
 
+<!--
 {{<section class="alternate">}}
 <div class="column">
 <h2>Linux</h2>
@@ -70,3 +70,4 @@ guide for what to do next.
 <h2>Downloads</h2>
 </div>
 {{</section>}}
+-->
