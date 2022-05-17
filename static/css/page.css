@@ -7,7 +7,6 @@ html, body {
     color: #594b26;
 }
 .page {
-    width: 70%;
     margin: auto;
 }
 .container {
@@ -26,7 +25,6 @@ html, body {
     background: #6c5a2d;
     color: #d5c397;
     font-family: "monospace";
-    font-size: 0.4em;
     font-weight: bold;
     padding: 1em 0em 0em 1em;
     border-radius: 2px;    
@@ -66,22 +64,29 @@ html, body {
 }
 .section {  
     display: flex;
-    padding: 0 0% 0 0%;
     width: 100%;
+    padding: 0 0 0 0;     
 }
 .column {
-    width: 100%;
-    padding: 1em 1.5em;
+
 }
-@media only screen and (max-width: 992px) {    
-    .content { width: 90%; padding: 5%; font-size: 14pt; line-height: 130%; }
-    .topbar { padding: 0em; margin: 0em; align-items: center; }
+@media only screen and (max-width: 992px) {
+    .page { width: 100%; padding: 0; }
+    .content { width: 100%; padding: 0; font-size: 14pt; line-height: 130%; }
+    .topbar { padding: 0; margin: 0em; align-items: center; }
     .topbar-title { font-size: 1em; }
+    .logo { font-size: 0.75em; }     
+    .section { flex-direction: column; }
+    .column{ width: 95%; margin: auto; }
 }
 
 @media only screen and (min-width: 992px) {
+    .page{ width: 70%; }
     .content { width: 100%; line-height: 150%; }
     .topbar { padding: 0em 0.5em; align-items: flex-start; }
     .topbar-title { font-size: 2em; }
     .topbar-menu { font-size: 12pt; }
+    .logo { font-size: 0.4em; } 
+    .section { flex-direction: row; }
+    .column { margin: 1em; width: 100%; }
 }
