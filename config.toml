@@ -5,7 +5,7 @@ googleAnalytics = "UA-5582165-5"
 paginate = 10
 enableRobotsTXT = true
 summaryLength = 30
-pygmentsStyle = "manni"
+pygmentsStyle =  "manni"
 
 [permalinks]
 blog = "/:year/:month/:day/:title/"
