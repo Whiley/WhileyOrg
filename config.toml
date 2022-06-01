@@ -1,4 +1,4 @@
-baseURL = "https://whiley.org"
+baseURL = "https://whiley.org/"
 languageCode = "en-nz"
 title = "Whiley Homepage"
 googleAnalytics = "UA-5582165-5"
