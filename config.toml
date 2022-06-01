@@ -1,4 +1,4 @@
-baseURL = "https://whiley.github.io/WhileyOrg/"
+baseURL = "https://whiley.org"
 languageCode = "en-nz"
 title = "Whiley Homepage"
 googleAnalytics = "UA-5582165-5"
@@ -8,4 +8,4 @@ summaryLength = 30
 pygmentsStyle = "manni"
 
 [permalinks]
-blog = "/:year/:month/:day/:title/"
+blog = "/blog//:year/:month/:day/:title/"
