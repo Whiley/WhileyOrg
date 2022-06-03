@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1"/>
+    <meta property="og:url" content="https://whiley.org/news/whiley-v0-4-1-released/"/>
+    <title>Whiley
+      
+      (Whiley v0.4.1 released!)
+      
+    </title>
+    <script type="text/javascript" src="js/ace.js" charset="utf-8"></script>
+    <script type="text/javascript" src="js/mode-whiley.js" charset="utf-8"></script>    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">    
+    <link rel="stylesheet" href="https://whiley.org/css/page.css">
+    <link rel="stylesheet" href="https://whiley.org/css/menu.css">
+    <link rel="stylesheet" href="https://whiley.org/css/style.css">
+    <link rel="stylesheet" href="https://whiley.org/css/whiley.css">    
+  </head>
+  <body>
+    <script>
+      "use strict";
+      function clearMenu() {
+        var q = window.matchMedia("(max-width: 992px)");
+        if(q.matches) {
+            var c = document.getElementById("menu-content");
+            var m = document.getElementById("menu");
+            c.style.display = 'none';
+            m.style.filter = '';     
+	}
+      }      
+      function toggleMenu() {
+        var q = window.matchMedia("(max-width: 992px)");
+        if(q.matches) {
+          var c = document.getElementById("menu-content");
+          var m = document.getElementById("menu");
+          if(c.style.display === 'block') {
+            c.style.display = 'none';
+            m.style.filter = '';     
+          } else {
+            c.style.display = 'block';
+            m.style.filter = "brightness(0.8)";
+          }
+	}
+      }
+      function toggleList(element) {
+	  element.style.display="none";
+	  var parent = element.parentNode;
+	  var items = parent.childNodes;
+	  for(var i=0;i<items.length;++i) {
+	      var item = items[i];
+	      if(item.classList && item.classList.contains("hidden")) {
+		  if(item.style.display === 'block') {
+		      item.style.display="none";
+		  } else {
+		      item.style.display="block";
+		  }
+	      }
+	}
+      }
+    </script>        
+    <div class="page">
+    <header class="topbar">
+      <div class="topbar-title"><a href="https://whiley.org/"><div class="logo">Wy</div></a></div>
+      <div class="topbar-sep"></div>
+      <div class="topbar-menu">
+	<div id="menu" onclick="toggleMenu()">
+	  <div id="menu-icon"><img src="https://whiley.org/images/menu.png" alt="Menu"/></div>	  
+	  <div id="menu-content">
+	    
+	    
+	    
+	    
+	    <a href="https://whiley.org/news/">News</a>
+	    
+	    
+	    
+	    
+	    
+	    <a href="https://whiley.org/install/">Install</a>
+	    
+	    
+	    
+	    
+	    
+	    <a href="https://whiley.org/learn/">Learn</a>
+	    
+	    
+	    
+	    
+	    
+	    <a href="http://whileylabs.com">Playground</a>	    
+	    
+	    
+	    
+	  </div>
+	</div>	
+      </div>
+    </header>
+    <div class="container">
+      <div class="content">
+	
+<h1 class="post-title">Whiley v0.4.1 released!</h1>
+<div class="post-date">
+  Thursday, August
+  3rd,
+  2017      
+</div>
+<hr/>
+<p>The next release of the Whiley Development Kit is upon us.  This is about six months since the last official release and, in the meantime, a lot has been going on!  For example, there have been more than ten releases of the Whiley Compiler (WyC) itself on <a href="http://search.maven.org/#search%7Cga%7C1%7Cwhiley">Maven central</a>.  The main updates are:</p>
+<ul>
+<li>
+<p><strong>RFCs</strong>.  A new process for proposing language changes (RFCs) has been instigated (see <a href="https://github.com/Whiley/RFCs/">here</a>).  This is done by submitting a pull request to the official RFC repository.  Currently, there are eight accepted RFCs and several more in the pipeline.</p>
+</li>
+<li>
+<p><strong>Standard Library</strong>.  The standard library has now been refactored roughly in line with <a href="https://github.com/Whiley/RFCs/blob/master/text/0007-refactor_stdlib.md">RFC#0007</a>.  This changes the structure from e.g. <code>whiley.lang.*</code>  and <code>whiley.io.*</code>  to a single package structure <code>std.*</code> .  This makes the library easier to digest, and more in line with other systems languages (e.g. C++, Rust, D).</p>
+</li>
+<li>
+<p><strong>Language</strong>.  Numerous improvements and bug fixes have been implemented in the Whiley Compiler (WyC).  Examples include: type invariants are now properly enforced (see <a href="https://github.com/Whiley/WhileyCompiler/issues/751">#751</a>); Syntax for property declarations has been added (see <a href="https://github.com/Whiley/WhileyCompiler/issues/711">#711</a>); Syntax for named record initialisers has been added (see <a href="https://github.com/Whiley/WhileyCompiler/issues/704">#704</a>).</p>
+</li>
+<li>
+<p><strong>Verification.</strong>   Numerous significant improvements to the Whiley Theorem Prover (WyTP) have been implemented.  It has essentially been rebuilt from scratch and, as a result, both performance and coverage are significantly improved.  A mechanism for showing generated <em>proofs</em>  has been added. Furthermore, there is now rudimentary support for generating <em>counter examples</em> .</p>
+</li>
+<li>
+<p><strong>Command-Line Tool</strong>.  The command-line tool, <code>wy</code> , has been updated with better support for displaying help information.  See <a href="http://whiley.org/about/getting-started/">here</a> for some information on using it.</p>
+</li>
+<li>
+<p><strong>Experimental Backends</strong>.  Two new experimental backends have been included in this release.  The first is for generating <em>Javascript</em>  and the second for generating <em>Java source</em> .  Whilst these are not complete, they are still useful (particularly the Javascript backend).</p>
+</li>
+<li>
+<p><strong>Whiley Language Specification</strong>.  This has been updated with more information regarding the process of definite assignment checking, and type checking.</p>
+</li>
+</ul>
+<p>The next major improvements include an overhaul of the WyIL API used within the compiler, and implementing some or all of the outstanding RFCs.  Also the introduction of a proper package manager and build system.  Work will also be continue on improving verification.</p>
+
+<hr/>
+
+
+      </div>
+    </div>
+    </div>
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-5582165-5', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+    
+  </body>
+</html>
