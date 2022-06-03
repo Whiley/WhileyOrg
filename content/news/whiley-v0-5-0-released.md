@@ -7,7 +7,7 @@ draft: false
 And, finally, another release of Whiley is upon us after some two years of waiting! As usual, there are a range of known issues and limitations. But, the main improvements are:
    * **Templates ([RFC#0023](https://github.com/Whiley/RFCs/blob/master/text/0023-templates.md))**.  The introduction of *templates* (a.k.a generics, type polymorphism, etc) is a fairly major improvement for Whiley.  A simple example:
 ```whiley
-function id&lt;T&gt;(T x) -&gt; (T y):
+function id<T>(T x) -> (T y):
     return x
 ```
 Here, we see the template type `T` is declared as part of the `function` signature.  At this stage, there are no *bounds* or similar, so use cases are fairly limited.
