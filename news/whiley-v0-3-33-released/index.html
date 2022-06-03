@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1"/>
+    <meta property="og:url" content="https://whiley.org/news/whiley-v0-3-33-released/"/>
+    <title>Whiley
+      
+      (Whiley v0.3.33 Released!)
+      
+    </title>
+    <script type="text/javascript" src="js/ace.js" charset="utf-8"></script>
+    <script type="text/javascript" src="js/mode-whiley.js" charset="utf-8"></script>    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">    
+    <link rel="stylesheet" href="https://whiley.org/css/page.css">
+    <link rel="stylesheet" href="https://whiley.org/css/menu.css">
+    <link rel="stylesheet" href="https://whiley.org/css/style.css">
+    <link rel="stylesheet" href="https://whiley.org/css/whiley.css">    
+  </head>
+  <body>
+    <script>
+      "use strict";
+      function clearMenu() {
+        var q = window.matchMedia("(max-width: 992px)");
+        if(q.matches) {
+            var c = document.getElementById("menu-content");
+            var m = document.getElementById("menu");
+            c.style.display = 'none';
+            m.style.filter = '';     
+	}
+      }      
+      function toggleMenu() {
+        var q = window.matchMedia("(max-width: 992px)");
+        if(q.matches) {
+          var c = document.getElementById("menu-content");
+          var m = document.getElementById("menu");
+          if(c.style.display === 'block') {
+            c.style.display = 'none';
+            m.style.filter = '';     
+          } else {
+            c.style.display = 'block';
+            m.style.filter = "brightness(0.8)";
+          }
+	}
+      }
+      function toggleList(element) {
+	  element.style.display="none";
+	  var parent = element.parentNode;
+	  var items = parent.childNodes;
+	  for(var i=0;i<items.length;++i) {
+	      var item = items[i];
+	      if(item.classList && item.classList.contains("hidden")) {
+		  if(item.style.display === 'block') {
+		      item.style.display="none";
+		  } else {
+		      item.style.display="block";
+		  }
+	      }
+	}
+      }
+    </script>        
+    <div class="page">
+    <header class="topbar">
+      <div class="topbar-title"><a href="https://whiley.org/"><div class="logo">Wy</div></a></div>
+      <div class="topbar-sep"></div>
+      <div class="topbar-menu">
+	<div id="menu" onclick="toggleMenu()">
+	  <div id="menu-icon"><img src="https://whiley.org/images/menu.png" alt="Menu"/></div>	  
+	  <div id="menu-content">
+	    
+	    
+	    
+	    
+	    <a href="https://whiley.org/news/">News</a>
+	    
+	    
+	    
+	    
+	    
+	    <a href="https://whiley.org/install/">Install</a>
+	    
+	    
+	    
+	    
+	    
+	    <a href="https://whiley.org/learn/">Learn</a>
+	    
+	    
+	    
+	    
+	    
+	    <a href="http://whileylabs.com">Playground</a>	    
+	    
+	    
+	    
+	  </div>
+	</div>	
+      </div>
+    </header>
+    <div class="container">
+      <div class="content">
+	
+<h1 class="post-title">Whiley v0.3.33 Released!</h1>
+<div class="post-date">
+  Wednesday, April
+  8th,
+  2015      
+</div>
+<hr/>
+<p>The next release of Whiley is upon us!! Work got a little bogged down with the start of term, but should hopefully now pick up a little.  The main component of this release is the removal of the <code>string</code> and <code>char</code> data types from the language. This is quite a big change, but is in line with my efforts to simplify the language. Instead of <code>string</code>, we now simply have a list of integers. Furthermore, we can constrain these integers to be, for example, ASCII or UTF8, etc.</p>
+<ul>
+<li>
+<p><strong>Removed string and char data types (<a href="https://github.com/Whiley/WhileyCompiler/issues/432">#432</a>)</strong>.  As discussed above, this is a fairly large change.  In particular, it required updating a large number of the test cases and benchmarks.</p>
+</li>
+<li>
+<p><strong>Removed protected modifier (<a href="https://github.com/Whiley/WhileyCompiler/issues/448">#448</a>)</strong>. The protected modifier was not really implemented and, although it&rsquo;s a good idea, for now I&rsquo;ve left it out.  This is something to be scheduled for proper inclusion down the track.</p>
+</li>
+<li>
+<p><strong>Removed WyIL Method / Function Cases (<a href="https://github.com/Whiley/WhileyCompiler/issues/475">#475</a>)</strong>.  Method / function cases were originally included to support overloading on pre- and post-conditions.  However, this hasn&rsquo;t been supported for a long time now.  Furthermore, with the advent of proper nominal type information at the WyIL level, we can get a very similar effect by using named types.</p>
+</li>
+<li>
+<p><strong>Removed implicit imports (<a href="https://github.com/Whiley/WhileyCompiler/issues/479">#479</a>).</strong> Following Java, I originally chose to have the package <code>whiley.lang.*</code> implicitly imported in every source file.  However, this exception was clearly a bad idea, not least because I want to imagine Whiley programs which are not necessarily connected with the standard library.  Therefore, this is removed and all test cases and benchmarks have been updated.</p>
+</li>
+<li>
+<p>Improved Error Messages for Loop Invariants (<a href="https://github.com/Whiley/WhileyCompiler/issues/486">#486</a>). Prior to <code>v0.3.32</code>, error messages were being reported correctly for loop invariants.  However, with the introduction of the <code>Invariant</code> bytecode, some issues arose and I resorted to a temporary fix for reporting error messages.  This is now fixed.</p>
+</li>
+</ul>
+<p>In addition to these updates, I&rsquo;ve also been through and updated the <a href="http://whiley.org/pdfs/WhileyLanguageSpec.pdf">Whiley Language Specification</a> and the <a href="http://whiley.org/pdfs/GettingStartedWithWhiley.pdf">Getting Started with Whiley</a> tutorial accordingly.  All up, this release is definitely an improvement over <code>v0.3.32</code>, although there is still a way to go before things are properly back on track. </p>
+
+<hr/>
+
+
+      </div>
+    </div>
+    </div>
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-5582165-5', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+    
+  </body>
+</html>

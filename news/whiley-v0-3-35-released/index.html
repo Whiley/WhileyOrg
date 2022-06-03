@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1"/>
+    <meta property="og:url" content="https://whiley.org/news/whiley-v0-3-35-released/"/>
+    <title>Whiley
+      
+      (Whiley v0.3.35 Released!)
+      
+    </title>
+    <script type="text/javascript" src="js/ace.js" charset="utf-8"></script>
+    <script type="text/javascript" src="js/mode-whiley.js" charset="utf-8"></script>    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">    
+    <link rel="stylesheet" href="https://whiley.org/css/page.css">
+    <link rel="stylesheet" href="https://whiley.org/css/menu.css">
+    <link rel="stylesheet" href="https://whiley.org/css/style.css">
+    <link rel="stylesheet" href="https://whiley.org/css/whiley.css">    
+  </head>
+  <body>
+    <script>
+      "use strict";
+      function clearMenu() {
+        var q = window.matchMedia("(max-width: 992px)");
+        if(q.matches) {
+            var c = document.getElementById("menu-content");
+            var m = document.getElementById("menu");
+            c.style.display = 'none';
+            m.style.filter = '';     
+	}
+      }      
+      function toggleMenu() {
+        var q = window.matchMedia("(max-width: 992px)");
+        if(q.matches) {
+          var c = document.getElementById("menu-content");
+          var m = document.getElementById("menu");
+          if(c.style.display === 'block') {
+            c.style.display = 'none';
+            m.style.filter = '';     
+          } else {
+            c.style.display = 'block';
+            m.style.filter = "brightness(0.8)";
+          }
+	}
+      }
+      function toggleList(element) {
+	  element.style.display="none";
+	  var parent = element.parentNode;
+	  var items = parent.childNodes;
+	  for(var i=0;i<items.length;++i) {
+	      var item = items[i];
+	      if(item.classList && item.classList.contains("hidden")) {
+		  if(item.style.display === 'block') {
+		      item.style.display="none";
+		  } else {
+		      item.style.display="block";
+		  }
+	      }
+	}
+      }
+    </script>        
+    <div class="page">
+    <header class="topbar">
+      <div class="topbar-title"><a href="https://whiley.org/"><div class="logo">Wy</div></a></div>
+      <div class="topbar-sep"></div>
+      <div class="topbar-menu">
+	<div id="menu" onclick="toggleMenu()">
+	  <div id="menu-icon"><img src="https://whiley.org/images/menu.png" alt="Menu"/></div>	  
+	  <div id="menu-content">
+	    
+	    
+	    
+	    
+	    <a href="https://whiley.org/news/">News</a>
+	    
+	    
+	    
+	    
+	    
+	    <a href="https://whiley.org/install/">Install</a>
+	    
+	    
+	    
+	    
+	    
+	    <a href="https://whiley.org/learn/">Learn</a>
+	    
+	    
+	    
+	    
+	    
+	    <a href="http://whileylabs.com">Playground</a>	    
+	    
+	    
+	    
+	  </div>
+	</div>	
+      </div>
+    </header>
+    <div class="container">
+      <div class="content">
+	
+<h1 class="post-title">Whiley v0.3.35 Released!</h1>
+<div class="post-date">
+  Friday, June
+  19th,
+  2015      
+</div>
+<hr/>
+<p>Finally, a release of Whiley that is on schedule!  This includes some fairly significant updates to the syntax of the language itself:</p>
+<ul>
+<li>
+<p><strong>Removal of set and map data types (<a href="https://github.com/Whiley/WhileyCompiler/issues/471">#471</a>)</strong>.  These data types have been entirely removed from both the source language (Whiley), and the bytecode language (WyIL).  This is a pretty radical change, but it relates to my goal of simplifying the language as much as possible to reduce outstanding issues.  In the future, I may consider putting these datatypes back in.</p>
+</li>
+<li>
+<p><strong>Removal of for loop (<a href="https://github.com/Whiley/WhileyCompiler/issues/471">#471</a>)</strong>.  This follows on from the above change.  Without set and map data types, there is no specific need for a <code>for</code> loop.  Therefore, this has removed for now in order that I can focus on getting everything else to work.  In the future, I certainly intend to put some kind of <code>for</code> loop back into the language (though it may take a different form).</p>
+</li>
+<li>
+<p><strong>Tidied up WyRL Examples</strong>.  The Whiley Rewrite Language is a domain-specific language for building declared rewrite systems.  This is used to implement the automated theorem prover in Whiley.  There are a number of examples that come with this, and I have tidied them up so they compile again.</p>
+</li>
+</ul>
+<p>One of the next main objectives will be to split the compiler up into the plugin framework.  This has been on the cards for a while, but it&rsquo;s finally getting traction.  For example, I have begun splitting out the WyRL module into <a href="https://github.com/Whiley/WhileyRewriteLanguage">its own repository</a> and migrating issues over.</p>
+
+<hr/>
+
+
+      </div>
+    </div>
+    </div>
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-5582165-5', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+    
+  </body>
+</html>

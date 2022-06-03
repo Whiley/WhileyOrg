@@ -110,7 +110,7 @@
 <ul>
 <li><strong>Templates (<a href="https://github.com/Whiley/RFCs/blob/master/text/0023-templates.md">RFC#0023</a>)</strong>.  The introduction of <em>templates</em> (a.k.a generics, type polymorphism, etc) is a fairly major improvement for Whiley.  A simple example:</li>
 </ul>
-<pre><code class="language-whiley" data-lang="whiley">function id&amp;lt;T&amp;gt;(T x) -&amp;gt; (T y):
+<pre><code class="language-whiley" data-lang="whiley">function id&lt;T&gt;(T x) -&gt; (T y):
     return x
 </code></pre><p>Here, we see the template type <code>T</code> is declared as part of the <code>function</code> signature.  At this stage, there are no <em>bounds</em> or similar, so use cases are fairly limited.</p>
 <ul>

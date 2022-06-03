@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1"/>
+    <meta property="og:url" content="https://whiley.org/news/whiley-v0-3-39-released/"/>
+    <title>Whiley
+      
+      (Whiley v0.3.39 Released!)
+      
+    </title>
+    <script type="text/javascript" src="js/ace.js" charset="utf-8"></script>
+    <script type="text/javascript" src="js/mode-whiley.js" charset="utf-8"></script>    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">    
+    <link rel="stylesheet" href="https://whiley.org/css/page.css">
+    <link rel="stylesheet" href="https://whiley.org/css/menu.css">
+    <link rel="stylesheet" href="https://whiley.org/css/style.css">
+    <link rel="stylesheet" href="https://whiley.org/css/whiley.css">    
+  </head>
+  <body>
+    <script>
+      "use strict";
+      function clearMenu() {
+        var q = window.matchMedia("(max-width: 992px)");
+        if(q.matches) {
+            var c = document.getElementById("menu-content");
+            var m = document.getElementById("menu");
+            c.style.display = 'none';
+            m.style.filter = '';     
+	}
+      }      
+      function toggleMenu() {
+        var q = window.matchMedia("(max-width: 992px)");
+        if(q.matches) {
+          var c = document.getElementById("menu-content");
+          var m = document.getElementById("menu");
+          if(c.style.display === 'block') {
+            c.style.display = 'none';
+            m.style.filter = '';     
+          } else {
+            c.style.display = 'block';
+            m.style.filter = "brightness(0.8)";
+          }
+	}
+      }
+      function toggleList(element) {
+	  element.style.display="none";
+	  var parent = element.parentNode;
+	  var items = parent.childNodes;
+	  for(var i=0;i<items.length;++i) {
+	      var item = items[i];
+	      if(item.classList && item.classList.contains("hidden")) {
+		  if(item.style.display === 'block') {
+		      item.style.display="none";
+		  } else {
+		      item.style.display="block";
+		  }
+	      }
+	}
+      }
+    </script>        
+    <div class="page">
+    <header class="topbar">
+      <div class="topbar-title"><a href="https://whiley.org/"><div class="logo">Wy</div></a></div>
+      <div class="topbar-sep"></div>
+      <div class="topbar-menu">
+	<div id="menu" onclick="toggleMenu()">
+	  <div id="menu-icon"><img src="https://whiley.org/images/menu.png" alt="Menu"/></div>	  
+	  <div id="menu-content">
+	    
+	    
+	    
+	    
+	    <a href="https://whiley.org/news/">News</a>
+	    
+	    
+	    
+	    
+	    
+	    <a href="https://whiley.org/install/">Install</a>
+	    
+	    
+	    
+	    
+	    
+	    <a href="https://whiley.org/learn/">Learn</a>
+	    
+	    
+	    
+	    
+	    
+	    <a href="http://whileylabs.com">Playground</a>	    
+	    
+	    
+	    
+	  </div>
+	</div>	
+      </div>
+    </header>
+    <div class="container">
+      <div class="content">
+	
+<h1 class="post-title">Whiley v0.3.39 Released!</h1>
+<div class="post-date">
+  Friday, March
+  11th,
+  2016      
+</div>
+<hr/>
+<p>Progress has slowed on Whiley now that Trimester 1 and my SWEN221 class with 220+ students has begun!  Despite this, development continues with more contributions from others which is great.  This release is largely a &ldquo;cleaning up&rdquo; and &ldquo;bug fixing&rdquo; release, rather than landing any big features.</p>
+<h2 id="changelist">ChangeList</h2>
+<ul>
+<li>
+<p><strong>Parameterised Test cases</strong> (<a href="https://github.com/Whiley/WhileyCompiler/issues/580">#580</a>,<a href="https://github.com/Whiley/WhileyCompiler/issues/588">#588</a>).  Thanks to @SebastianS90, this simplifies the testing framework.  Previously, each test case corresponded to an entry in a JUnit test file and a source file on disk.  This update employs a useful feature of JUnit allowing us to generate test cases on the fly.  So, the test framework scans the list of available tests in the appropriate directories and generates the list of JUnit test cases from that.</p>
+</li>
+<li>
+<p><strong>Fail Statement</strong> (<a href="https://github.com/Whiley/WhileyCompiler/issues/579">#579</a>).  Thanks to @richdougherty, this adds the <code>fail</code> statement which is mentioned in the spec and elsewhere.  This should hopefully provide more flexibility when interacting with the verifier.</p>
+</li>
+</ul>
+<p>In addition to this, a number of other bug fixes were made.</p>
+<h2 id="contributors">Contributors</h2>
+<p>Thanks (in no particular order) to the various people who have contributed to this release!</p>
+<p>Richard Dougherty (<a href="https://github.com/richdougherty">@richdougherty</a>)
+Sebastian Schweizer (<a href="https://github.com/SebastianS90">@SebastianS90</a>)</p>
+<h2 id="in-progress">In Progress</h2>
+<p>For the future, I am already working on a revamped <code>wyil</code> bytecode format and API.  And, @SebastianS90 is making good progress on an extension to support object lifetimes (as found in Rust).</p>
+
+<hr/>
+
+
+      </div>
+    </div>
+    </div>
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-5582165-5', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+    
+  </body>
+</html>
