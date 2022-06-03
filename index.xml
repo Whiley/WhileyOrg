@@ -206,6 +206,15 @@
     </item>
     
     <item>
+      <title>Whiley v0.3.22 Released!</title>
+      <link>https://whiley.org/news/whiley-v0-3-22-released/</link>
+      <pubDate>Sat, 15 Feb 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://whiley.org/news/whiley-v0-3-22-released/</guid>
+      <description>The next release of Whiley is now available. This implements some significant changes to the language syntax, as discussed in this post and this post. Although the migration towards this new syntax is not fully complete, it is largely working well.</description>
+    </item>
+    
+    <item>
       <title>Whiley v0.3.21 Released!</title>
       <link>https://whiley.org/news/whiley-v0-3-21-released/</link>
       <pubDate>Sun, 27 Oct 2013 00:00:00 +0000</pubDate>
@@ -386,6 +395,36 @@
       
       <guid>https://whiley.org/news/whiley-v0-3-1-released/</guid>
       <description>Well, I&amp;rsquo;ve just released another update to the Whiley compiler. As usual, you can access this from the downloads link on the left. This release is relatively minor, which primarily fixes a number of bugs and includes more tests.</description>
+    </item>
+    
+    <item>
+      <title>Whiley v0.2.9 Released!</title>
+      <link>https://whiley.org/news/whiley-v0-2-9-released/</link>
+      <pubDate>Sun, 25 Jul 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://whiley.org/news/whiley-v0-2-9-released/</guid>
+      <description>Well, here&amp;rsquo;s version 0.2.9. This includes numerous bug fixes, and several major feature updates:
+  Support for recursive algebraic datatypes
+  Improved support for type testing, particularly of recursive types</description>
+    </item>
+    
+    <item>
+      <title>Whiley v0.2.8 Released!</title>
+      <link>https://whiley.org/news/whiley-v0-2-8-released/</link>
+      <pubDate>Sat, 10 Jul 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://whiley.org/news/whiley-v0-2-8-released/</guid>
+      <description>Here is the latest update for the Whiley-to-Java Compiler. It now weighs in at around 47KLOC, spread over 272 classes. There are 379+ distinct test inputs, which give rise to around 615 actual JUnit tests.</description>
+    </item>
+    
+    <item>
+      <title>Whiley v0.2.7 Released!</title>
+      <link>https://whiley.org/news/whiley-v0-2-7-released/</link>
+      <pubDate>Thu, 24 Jun 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://whiley.org/news/whiley-v0-2-7-released/</guid>
+      <description>Well, finally, after a lot of effort I have a new release of the Whiley Development Kit. To get it, follow the download links on the left.
+The major difference over the previous version is that the theorem prover has been almost completely rewritten.</description>
     </item>
     
   </channel>
