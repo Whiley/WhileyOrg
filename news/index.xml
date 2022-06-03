@@ -226,12 +226,166 @@
     </item>
     
     <item>
+      <title>Whiley v0.3.19 Released!</title>
+      <link>https://whiley.org/news/whiley-v0-3-19-released/</link>
+      <pubDate>Mon, 06 May 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://whiley.org/news/whiley-v0-3-19-released/</guid>
+      <description>It is with some disappointment that I&amp;rsquo;ve finally decided to release v0.3.19 despite this being almost 3 months overdue! The disappointment arises because, despite a lot of valiant effort, verification is still not working very well &amp;mdash; and, in fact, is probably worse than the previous release!</description>
+    </item>
+    
+    <item>
+      <title>Whiley v0.3.18 Released!</title>
+      <link>https://whiley.org/news/whiley-v0-3-18-released/</link>
+      <pubDate>Fri, 11 Jan 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://whiley.org/news/whiley-v0-3-18-released/</guid>
+      <description>The next version of Whiley is upon us! This consists of mostly lightweight improvements over v0.3.17 and various bug fixes (see issues for more). I have now been attempting to verify some of the microbenchmarks in Wybench, with some useful progress being made (although it is flushing out a lot of issues).</description>
+    </item>
+    
+    <item>
+      <title>Whiley v0.3.16 Released!</title>
+      <link>https://whiley.org/news/whiley-v0-3-16-released/</link>
+      <pubDate>Tue, 31 Jul 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://whiley.org/news/whiley-v0-3-16-released/</guid>
+      <description>Well, after a reasonable wait, the next release of Whiley is finally upon us. This represents a number of fairly significant changes, all of which improve the compiler very nicely.</description>
+    </item>
+    
+    <item>
+      <title>Whiley v0.3.15 Released!</title>
+      <link>https://whiley.org/news/whiley-v0-3-15-released/</link>
+      <pubDate>Fri, 25 May 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://whiley.org/news/whiley-v0-3-15-released/</guid>
+      <description>Finally the next release of Whiley is upon us! There are a few useful improvements in this release. In particular, compile-time verification of constraints is again functioning and can be enabled with a switch.</description>
+    </item>
+    
+    <item>
+      <title>Whiley v0.3.14 Released!</title>
+      <link>https://whiley.org/news/whiley-v0-3-14-released/</link>
+      <pubDate>Wed, 07 Mar 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://whiley.org/news/whiley-v0-3-14-released/</guid>
+      <description>Finally, it&amp;rsquo;s time for yet another release. The main change with this release has been a reworking of the compiler framework into a more serious build system called, unsurprisingly, the Whiley Builder System (wybs).</description>
+    </item>
+    
+    <item>
+      <title>Whiley v0.3.13 Released!</title>
+      <link>https://whiley.org/news/whiley-v0-3-13-released/</link>
+      <pubDate>Tue, 24 Jan 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://whiley.org/news/whiley-v0-3-13-released/</guid>
+      <description>Well, it&amp;rsquo;s been almost two months in the making, but here&amp;rsquo;s the next release of Whiley. Quite of lot of changes, although there remain significant issues to resolve &amp;mdash; particularly with the front-end.</description>
+    </item>
+    
+    <item>
+      <title>Whiley v0.3.12 Released!</title>
+      <link>https://whiley.org/news/whiley-v0-3-12-released/</link>
+      <pubDate>Fri, 02 Dec 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://whiley.org/news/whiley-v0-3-12-released/</guid>
+      <description>Well, crikey, what a long time since the last release. Things haven&amp;rsquo;t changed a whole lot, apart from various bug fixes. Probably the most interesting update is the inclusion of reference counting of compound structures to enable in-place updates and prevent unnecessary cloning.</description>
+    </item>
+    
+    <item>
+      <title>Whiley v0.3.11 Released!</title>
+      <link>https://whiley.org/news/whiley-v0-3-11-released/</link>
+      <pubDate>Fri, 28 Oct 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://whiley.org/news/whiley-v0-3-11-released/</guid>
+      <description>As usual, it&amp;rsquo;s been a surprising amount of effort &amp;hellip; but the next release of Whiley is available! It&amp;rsquo;s been quite a long time since the last update, but then quite a lot has improved.</description>
+    </item>
+    
+    <item>
+      <title>Whiley v0.3.10 Released!</title>
+      <link>https://whiley.org/news/whiley-v0-3-10-released/</link>
+      <pubDate>Wed, 21 Sep 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://whiley.org/news/whiley-v0-3-10-released/</guid>
+      <description>Well, it&amp;rsquo;s been a tough slog. But, finally, we have a new release of Whiley!! The main thing that&amp;rsquo;s improved over the past few weeks is the underlying type implementation. This was causing problems before, as programs which should type-check were failing and vice-versa.</description>
+    </item>
+    
+    <item>
+      <title>Whiley v0.3.9 Released!</title>
+      <link>https://whiley.org/news/whiley-v0-3-9-released/</link>
+      <pubDate>Mon, 15 Aug 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://whiley.org/news/whiley-v0-3-9-released/</guid>
+      <description>So, it&amp;rsquo;s that time again for another update of the Whiley compiler. Perhaps the most interesting update is that constraints are back! Admitedly, only runtime checking of constraints is back; and, there are quite a few problems with it.</description>
+    </item>
+    
+    <item>
+      <title>Whiley v0.3.8 Released!</title>
+      <link>https://whiley.org/news/whiley-v0-3-8-released/</link>
+      <pubDate>Mon, 01 Aug 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://whiley.org/news/whiley-v0-3-8-released/</guid>
+      <description>Now that teaching has started up again, development has slowed a little. This release is primarily a bug fix release. The benchmarks and examples now all compile again, which is great!</description>
+    </item>
+    
+    <item>
+      <title>Whiley v0.3.7 Released!</title>
+      <link>https://whiley.org/news/whiley-v0-3-7-released/</link>
+      <pubDate>Thu, 07 Jul 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://whiley.org/news/whiley-v0-3-7-released/</guid>
+      <description>Development has continued at a fairly quick pace since the last release of Whiley. However, with the impending start of term, things are bound to slow down. Therefore, I&amp;rsquo;m making a release now a little sooner that otherwise planned.</description>
+    </item>
+    
+    <item>
+      <title>Whiley v0.3.6 Released!</title>
+      <link>https://whiley.org/news/whiley-v0-3-6-released/</link>
+      <pubDate>Sun, 26 Jun 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://whiley.org/news/whiley-v0-3-6-released/</guid>
+      <description>After an untold number of commits, bug fixes and passing unit tests, the next version of Whiley is released!! I am trying to lock down the syntax of the language as much as possible now, although there are still a number of open issues.</description>
+    </item>
+    
+    <item>
+      <title>Whiley v0.3.5 released!</title>
+      <link>https://whiley.org/news/whiley-v0-3-5-released/</link>
+      <pubDate>Sun, 08 May 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://whiley.org/news/whiley-v0-3-5-released/</guid>
+      <description>ChangeLog Separated compiler up into two main components as follows:
+  The Whiley Compiler (wyc). This provides a base compiler which is responsible for parsing whiley programs, as well as type checking and constraint checking them.</description>
+    </item>
+    
+    <item>
+      <title>Whiley v0.3.4 Released!</title>
+      <link>https://whiley.org/news/whiley-v0-3-4-released/</link>
+      <pubDate>Tue, 26 Apr 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://whiley.org/news/whiley-v0-3-4-released/</guid>
+      <description>Well, after a fairly long haul, the latest version of Whiley is released. This remains something of a stop-gap for the moment, as there is still quite a lot to do!</description>
+    </item>
+    
+    <item>
       <title>Whiley v0.3.3 Released!</title>
       <link>https://whiley.org/news/whiley-v0-3-3-released/</link>
       <pubDate>Mon, 14 Feb 2011 00:00:00 +0000</pubDate>
       
       <guid>https://whiley.org/news/whiley-v0-3-3-released/</guid>
       <description>This latest update of Whiley is a somewhat minor increment over the previous. Aside from a number of bug fixes the main improvement is the inclusion of first-class functions (aka function pointers).</description>
+    </item>
+    
+    <item>
+      <title>Whiley v0.3.2 Released!</title>
+      <link>https://whiley.org/news/whiley-v0-3-2-released/</link>
+      <pubDate>Thu, 16 Dec 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://whiley.org/news/whiley-v0-3-2-released/</guid>
+      <description>Well, another release was long overdue!!! This one includes lots and lots of bug fixes, particularly to the type system, and support for dictionaries (aka maps) is now in place. Also, the language has been split in two parts: the base language (flow-sensitive + structural typing), and the extended langauge (which includes constraint checking).</description>
+    </item>
+    
+    <item>
+      <title>Whiley v0.3.1 Released!</title>
+      <link>https://whiley.org/news/whiley-v0-3-1-released/</link>
+      <pubDate>Wed, 03 Nov 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://whiley.org/news/whiley-v0-3-1-released/</guid>
+      <description>Well, I&amp;rsquo;ve just released another update to the Whiley compiler. As usual, you can access this from the downloads link on the left. This release is relatively minor, which primarily fixes a number of bugs and includes more tests.</description>
     </item>
     
   </channel>
