@@ -26,10 +26,10 @@ There are a number of (small) programs written in Whiley which provide
 a useful reference:
 
 <ul>
-<li><p><b>Minesweeper.</b> A web-based implementation of the well-known <a href="https://en.wikipedia.org/wiki/Minesweeper_(video_game)">Minesweeper</a> game. <a href="https://github.com/DavePearce/Minesweeper.wy">[Github]</a></p></li>
-<li><p><b>Conway's Game of Life</b> A web-based implementation of Conway's well-known <a href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life">Game of Life</a>. <a href="https://github.com/DavePearce/Conway.wy">[Github]</a></p></li>
-<li><p><b>LZ77 Compression / Decompression</b> <a href="https://github.com/DavePearce/LZ.wy">[Github]</a></p></li>
-<li><p><b>Standard Library</b> This is Whiley's standard library which (albeit small) is perhaps the best example of Whiley code. <a href="https://github.com/Whiley/STD.wy">[Github]</a></p></li>
+<li><p><b>Minesweeper</b>. A web-based implementation of the well-known <a href="https://en.wikipedia.org/wiki/Minesweeper_(video_game)">Minesweeper</a> game. <a href="https://github.com/DavePearce/Minesweeper.wy">[Github]</a></p></li>
+<li><p><b>Conway's Game of Life</b>. A web-based implementation of Conway's well-known <a href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life">Game of Life</a>. <a href="https://github.com/DavePearce/Conway.wy">[Github]</a></p></li>
+<li><p><b>LZ77 Compression / Decompression</b>. <a href="https://github.com/DavePearce/LZ.wy">[Github]</a></p></li>
+<li><p><b>Standard Library</b>. This is Whiley's standard library which (albeit small) is perhaps the best example of Whiley code. <a href="https://github.com/Whiley/STD.wy">[Github]</a></p></li>
 
 </ul>
 
