@@ -25,13 +25,13 @@ for installing via <code>rustup</code> <a
 href="https://www.rust-lang.org/tools/install">here</a>).  To install
 Whiley, run <code>cargo</code> as follows:
 
-<div class="code">> cargo install whiley</div>
+<pre>> cargo install whiley</pre>
 
 This will download and compile the latest version of Whiley (note this
 also requires <code>libssl-dev</code> is installed).  You can then
 test your installation as follows:
 
-<div class="code">> wy</div>
+<pre>> wy</pre>
 
 You should then see information about the various commands you can run
 (e.g. <code>build</code>).  See the <a href="/learn">getting started</a>

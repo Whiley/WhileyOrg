@@ -16,7 +16,7 @@ draft: false
 
 Having <a href="../install">installed</a> Whiley, you can run your first program like so:
 
-<div class="code">> wy init<br/>> wy build<br/>> wy run<br/>Hello World</div>
+<pre>> wy init<br/>> wy build<br/>> wy run<br/>Hello World</pre>
 
 You should see the Whiley source file <code>src/main.whiley</code> is created, along with the <code>wy.toml</code> build file.
 
