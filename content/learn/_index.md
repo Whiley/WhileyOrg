@@ -37,6 +37,7 @@ a useful reference:
 
 <ul>
 <li><p><b>Getting Started With Whiley</b>.  A tutorial which walks through the basic concepts of Whiley, and provides a rudimentary introduction to verification.  <a href="/pdfs/GettingStartedWithWhiley.pdf">[PDF]</a></p></li>
+<li><p><b>Whiley Cheat Sheet</b>.  A quick overview of the language syntax.  <a href="/pdfs/WhileyCheatSheet.pdf">[PDF]</a></p></li>
 <li><p><b>Introduction to Verification with Whiley</b>. A tutorial which focuses in much more detail on verifying programs in Whiley, and the various challenges and pitfalls.  <a href="https://whileydave.com/publications/PUG18_ETSS_preprint.pdf">[PDF]</a></p></li>
 <li><p><b>Whiley Language Specification</b>.  Provides a reasonably comprehensive overview of the language.  <a href="/pdfs/WhileyLanguageSpec.pdf">[PDF]</a></p></li>
 </ul>
