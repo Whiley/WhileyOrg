@@ -1,7 +1,7 @@
 ---
 date: 2015-01-06
 title: "Looking Forward to 2015"
-draft: true
+draft: false
 ---
 
 It's scary to think that 2014 has been and gone, and that I still haven't released the next major version of Whiley!  Despite this, I have been busy improving the compiler and language and I thought it would be helpful for me to recap what was achieved last year, and what the goals going forward are.
