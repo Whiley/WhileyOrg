@@ -40,6 +40,16 @@
     </item>
     
     <item>
+      <title>Web IDE gets a Face Lift!</title>
+      <link>https://whiley.org/2017/08/24/web-ide-gets-a-face-lift/</link>
+      <pubDate>Thu, 24 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://whiley.org/2017/08/24/web-ide-gets-a-face-lift/</guid>
+      <description>The web IDE for Whiley is the easiest way to run Whiley, and it&amp;rsquo;s even better after a little face lift! Here&amp;rsquo;s the obligatory screenshot:
+ You can run this on your local machine by cloning the Github repo and running ant run from the command-line.</description>
+    </item>
+    
+    <item>
       <title>Whiley v0.4.1 released!</title>
       <link>https://whiley.org/2017/08/03/whiley-v0.4.1-released/</link>
       <pubDate>Thu, 03 Aug 2017 00:00:00 +0000</pubDate>
