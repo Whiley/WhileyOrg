@@ -8,4 +8,4 @@ summaryLength = 30
 pygmentsStyle =  "manni"
 
 [permalinks]
-blog = "/:year/:month/:day/:title/"
+news = "/:year/:month/:day/:title/"
