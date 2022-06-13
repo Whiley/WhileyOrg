@@ -141,6 +141,15 @@
     </item>
     
     <item>
+      <title>Looking Forward to 2015</title>
+      <link>https://whiley.org/2015/01/06/looking-forward-to-2015/</link>
+      <pubDate>Tue, 06 Jan 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://whiley.org/2015/01/06/looking-forward-to-2015/</guid>
+      <description>It&amp;rsquo;s scary to think that 2014 has been and gone, and that I still haven&amp;rsquo;t released the next major version of Whiley! Despite this, I have been busy improving the compiler and language and I thought it would be helpful for me to recap what was achieved last year, and what the goals going forward are.</description>
+    </item>
+    
+    <item>
       <title>Whiley v0.3.31 Released!</title>
       <link>https://whiley.org/2014/10/09/whiley-v0.3.31-released/</link>
       <pubDate>Thu, 09 Oct 2014 00:00:00 +0000</pubDate>
