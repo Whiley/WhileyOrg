@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1"/>
+    <meta property="og:url" content="https://whiley.org/2012/07/31/whiley-v0.3.16-released/"/>
+    <title>Whiley
+      
+      (Whiley v0.3.16 Released!)
+      
+    </title>
+    <script type="text/javascript" src="js/ace.js" charset="utf-8"></script>
+    <script type="text/javascript" src="js/mode-whiley.js" charset="utf-8"></script>    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">    
+    <link rel="stylesheet" href="https://whiley.org/css/page.css">
+    <link rel="stylesheet" href="https://whiley.org/css/menu.css">
+    <link rel="stylesheet" href="https://whiley.org/css/style.css">
+    <link rel="stylesheet" href="https://whiley.org/css/whiley.css">    
+  </head>
+  <body>
+    <script>
+      "use strict";
+      function clearMenu() {
+        var q = window.matchMedia("(max-width: 992px)");
+        if(q.matches) {
+            var c = document.getElementById("menu-content");
+            var m = document.getElementById("menu");
+            c.style.display = 'none';
+            m.style.filter = '';     
+	}
+      }      
+      function toggleMenu() {
+        var q = window.matchMedia("(max-width: 992px)");
+        if(q.matches) {
+          var c = document.getElementById("menu-content");
+          var m = document.getElementById("menu");
+          if(c.style.display === 'block') {
+            c.style.display = 'none';
+            m.style.filter = '';     
+          } else {
+            c.style.display = 'block';
+            m.style.filter = "brightness(0.8)";
+          }
+	}
+      }
+      function toggleList(element) {
+	  element.style.display="none";
+	  var parent = element.parentNode;
+	  var items = parent.childNodes;
+	  for(var i=0;i<items.length;++i) {
+	      var item = items[i];
+	      if(item.classList && item.classList.contains("hidden")) {
+		  if(item.style.display === 'block') {
+		      item.style.display="none";
+		  } else {
+		      item.style.display="block";
+		  }
+	      }
+	}
+      }
+    </script>        
+    <div class="page">
+    <header class="topbar">
+      <div class="topbar-title"><a href="https://whiley.org/"><div class="logo">Wy</div></a></div>
+      <div class="topbar-sep"></div>
+      <div class="topbar-menu">
+	<div id="menu" onclick="toggleMenu()">
+	  <div id="menu-icon"><img src="https://whiley.org/images/menu.png" alt="Menu"/></div>	  
+	  <div id="menu-content">
+	    
+	    
+	    
+	    
+	    <a href="https://whiley.org/news/">News</a>
+	    
+	    
+	    
+	    
+	    
+	    <a href="https://whiley.org/install/">Install</a>
+	    
+	    
+	    
+	    
+	    
+	    <a href="https://whiley.org/learn/">Learn</a>
+	    
+	    
+	    
+	    
+	    
+	    <a href="http://whileylabs.com">Playground</a>	    
+	    
+	    
+	    
+	  </div>
+	</div>	
+      </div>
+    </header>
+    <div class="container">
+      <div class="content">
+	
+<h1 class="post-title">Whiley v0.3.16 Released!</h1>
+<div class="post-date">
+  Tuesday, July
+  31st,
+  2012      
+</div>
+<hr/>
+<p>Well, after a reasonable wait, the next release of Whiley is finally upon us.  This represents a number of fairly significant changes, all of which  improve the compiler very nicely.</p>
+<h2 id="changelog">ChangeLog</h2>
+<ul>
+<li>
+<p>The Whiley Intermediate Language (WYIL) is now a <em>register-based</em> bytecode language, rather than a <em>stack-based</em> one.  This offers a number of nice improvements to the compiler.  In particular, it simplifies several stages (e.g. constant propagation) which no longer have to be concerned with maintaing stack consistency.</p>
+</li>
+<li>
+<p>The Whiley Intermediate Language (WYIL) now has a binary file format.  This may seem unimportant but, in fact, it opens up a number of significant improvements to the compiler.  In particular, the build system can now correctly support multiple back-ends simultaneously; constraints and encapsulation modifiers can be extracted from e.g. library function calls (where previously they were being lost); we could now (in principle) write a standalone interpreter for WYIL bytecodes; we can now independently compile from Whiley to WYIL and then from WYIL to some other architecture; finally, it should be relatively easy now to fix the problem of &ldquo;horizontal dependencies&rdquo; during incremental compilation (which is particularly important for the Eclipse plugin).</p>
+</li>
+<li>
+<p>The Whiley Development Kit has been completely reorganised.  This is largely thanks to the WYIL binary format, which has enabled me to properly isolate the separate modules.  Thus, WYIL forms the core module and everything else builds of this.</p>
+</li>
+<li>
+<p>The notion of a &ldquo;message&rdquo; has now been completely stripped out of the compiler.  There are now only functions (which are pure) and methods (which may have side-effects).</p>
+</li>
+<li>
+<p>The assume statement has been added.  This differs from the assert statement in that the verifier will not fail with an error if the assumed condition cannot be shown to hold.  Instead, the verifier will simply &ldquo;assume&rdquo; that the condition does hold.</p>
+</li>
+<li>
+<p>The amount of redundant code that existed between the Ant tasks and the Main classes which were previously used solely from the command-line has been reduced by factoring it out into a generic &ldquo;build task&rdquo;.  This may also be useful for the Eclipse plugin, although at this stage it&rsquo;s unclear.</p>
+</li>
+<li>
+<p>Numerous bugs have been fixed, including a few which have been lurking unnoticed for some time.</p>
+</li>
+</ul>
+
+<hr/>
+
+
+      </div>
+    </div>
+    </div>
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-5582165-5', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+    
+  </body>
+</html>
