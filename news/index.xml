@@ -225,6 +225,15 @@
     </item>
     
     <item>
+      <title>Eclipse Plugin v0.1.1 Released</title>
+      <link>https://whiley.org/2014/02/17/eclipse-plugin-v0.1.1-released/</link>
+      <pubDate>Mon, 17 Feb 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://whiley.org/2014/02/17/eclipse-plugin-v0.1.1-released/</guid>
+      <description>After the recent release of Whiley v0.3.22 which updated the language syntax, I have now updated the Eclipse plugin accordingly. See this page for more on installing the plugin from within Eclipse.</description>
+    </item>
+    
+    <item>
       <title>Whiley v0.3.22 Released!</title>
       <link>https://whiley.org/2014/02/15/whiley-v0.3.22-released/</link>
       <pubDate>Sat, 15 Feb 2014 00:00:00 +0000</pubDate>
@@ -444,6 +453,15 @@
       <guid>https://whiley.org/2010/06/24/whiley-v0.2.7-released/</guid>
       <description>Well, finally, after a lot of effort I have a new release of the Whiley Development Kit. To get it, follow the download links on the left.
 The major difference over the previous version is that the theorem prover has been almost completely rewritten.</description>
+    </item>
+    
+    <item>
+      <title>Whiley Compiler Status Update</title>
+      <link>https://whiley.org/2010/06/07/whiley-compiler-status-update/</link>
+      <pubDate>Mon, 07 Jun 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://whiley.org/2010/06/07/whiley-compiler-status-update/</guid>
+      <description>So, a little update regarding the status of the Whiley compiler. I have spent a considerable amount of time redesigning the theorem prover over the last 8-12 weeks, and still haven&amp;rsquo;t managed to put everything back together.</description>
     </item>
     
   </channel>
