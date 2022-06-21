@@ -345,6 +345,15 @@ Example: Absolute of an Integer Consider this simple program:</description>
     </item>
     
     <item>
+      <title>Design of the Whiley Compiler (Wyc) Front-End</title>
+      <link>https://whiley.org/2012/02/13/design-of-the-whiley-compiler-wyc-front-end/</link>
+      <pubDate>Mon, 13 Feb 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://whiley.org/2012/02/13/design-of-the-whiley-compiler-wyc-front-end/</guid>
+      <description>Designing the front-end of the Whiley Compiler (Wyc) is a somewhat delicate and complicated issue. I have iterated on this a few times, and still not found a solution I&amp;rsquo;m happy with.</description>
+    </item>
+    
+    <item>
       <title>Whiley v0.3.13 Released!</title>
       <link>https://whiley.org/2012/01/24/whiley-v0.3.13-released/</link>
       <pubDate>Tue, 24 Jan 2012 00:00:00 +0000</pubDate>

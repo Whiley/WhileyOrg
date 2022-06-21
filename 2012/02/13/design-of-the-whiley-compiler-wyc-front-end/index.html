@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1"/>
+    <meta property="og:url" content="https://whiley.org/2012/02/13/design-of-the-whiley-compiler-wyc-front-end/"/>
+    <title>Whiley
+      
+      (Design of the Whiley Compiler (Wyc) Front-End)
+      
+    </title>
+    <script type="text/javascript" src="js/ace.js" charset="utf-8"></script>
+    <script type="text/javascript" src="js/mode-whiley.js" charset="utf-8"></script>    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">    
+    <link rel="stylesheet" href="https://whiley.org/css/page.css">
+    <link rel="stylesheet" href="https://whiley.org/css/menu.css">
+    <link rel="stylesheet" href="https://whiley.org/css/style.css">
+    <link rel="stylesheet" href="https://whiley.org/css/whiley.css">    
+  </head>
+  <body>
+    <script>
+      "use strict";
+      function clearMenu() {
+        var q = window.matchMedia("(max-width: 992px)");
+        if(q.matches) {
+            var c = document.getElementById("menu-content");
+            var m = document.getElementById("menu");
+            c.style.display = 'none';
+            m.style.filter = '';     
+	}
+      }      
+      function toggleMenu() {
+        var q = window.matchMedia("(max-width: 992px)");
+        if(q.matches) {
+          var c = document.getElementById("menu-content");
+          var m = document.getElementById("menu");
+          if(c.style.display === 'block') {
+            c.style.display = 'none';
+            m.style.filter = '';     
+          } else {
+            c.style.display = 'block';
+            m.style.filter = "brightness(0.8)";
+          }
+	}
+      }
+      function toggleList(element) {
+	  element.style.display="none";
+	  var parent = element.parentNode;
+	  var items = parent.childNodes;
+	  for(var i=0;i<items.length;++i) {
+	      var item = items[i];
+	      if(item.classList && item.classList.contains("hidden")) {
+		  if(item.style.display === 'block') {
+		      item.style.display="none";
+		  } else {
+		      item.style.display="block";
+		  }
+	      }
+	}
+      }
+    </script>        
+    <div class="page">
+    <header class="topbar">
+      <div class="topbar-title"><a href="https://whiley.org/"><div class="logo">Wy</div></a></div>
+      <div class="topbar-sep"></div>
+      <div class="topbar-menu">
+	<div id="menu" onclick="toggleMenu()">
+	  <div id="menu-icon"><img src="https://whiley.org/images/menu.png" alt="Menu"/></div>	  
+	  <div id="menu-content">
+	    
+	    
+	    
+	    
+	    <a href="https://whiley.org/news/">News</a>
+	    
+	    
+	    
+	    
+	    
+	    <a href="https://whiley.org/install/">Install</a>
+	    
+	    
+	    
+	    
+	    
+	    <a href="https://whiley.org/learn/">Learn</a>
+	    
+	    
+	    
+	    
+	    
+	    <a href="http://whileylabs.com">Playground</a>	    
+	    
+	    
+	    
+	  </div>
+	</div>	
+      </div>
+    </header>
+    <div class="container">
+      <div class="content">
+	
+<h1 class="post-title">Design of the Whiley Compiler (Wyc) Front-End</h1>
+<div class="post-date">
+  Monday, February
+  13th,
+  2012      
+</div>
+<hr/>
+<p>Designing the front-end of the Whiley Compiler (Wyc) is a somewhat delicate and complicated issue.  I have iterated on this a few times, and still not found a solution I&rsquo;m happy with.  It&rsquo;s important, because it ultimately determines what is possible in terms of language syntax and what is not.  That is, when certain events occur in the front-end determines whether or not I can pull off certain &ldquo;tricks&rdquo; to simplify my syntax or not.</p>
+<p>In an effort to help me get a good handle on the problem, I&rsquo;m going to try and enumerate the main issues here.  With any luck, the answer will just pop out &hellip;</p>
+<h2 id="overview">Overview</h2>
+<p>The main task of the front-end is to convert Whiley source code into the Wyil intermediate bytecode.  The key aspects of Wyil are:</p>
+<ul>
+<li>
+<p>Wyil is an unstructured intermediate language, whose programs are composed of bytecodes (similar in many ways to Java Bytecode).</p>
+</li>
+<li>
+<p>All names used in Wyil bytecodes are fully resolved (i.e. they include appropriate package and module identifiers).</p>
+</li>
+<li>
+<p>All Wyil bytecodes are associated with an appropriate type.  For example, the type of a <code>length</code> bytecode must be an effective collection (i.e. an effective list, set, dictionary or string).</p>
+</li>
+<li>
+<p>All constraints should be expanded (or, at least, partially expanded)</p>
+</li>
+</ul>
+<p>As an example, consider this Whiley program for summing a list of naturals:</p>
+<pre><code class="language-whiley" data-lang="whiley">import nat from whiley.lang.Int
+
+public int sum([nat] list):
+    r = 0
+    for i in list:
+        r = r + i
+    return r
+</code></pre><p>This is compiled into the following Wyil bytecodes:</p>
+<pre><code class="language-whiley" data-lang="whiley">public int sum([int] list):
+requires:
+    load 0 : [int]
+    forall 2 : [int]
+        load 2 : int
+        const 0 : int
+        ifge goto exitlab : int
+        fail &quot;constraint not satisfied&quot;
+    .exitlab
+body:
+    var r, i
+    const 0 : int
+    store r : int
+    load list : [int]
+    forall i : [int]
+        load r : int
+        load i : int
+        add : int
+        store r : int
+    load r : int
+    return : int
+</code></pre><p>We can see that the type <code>nat</code> has been expanded to <code>int</code> by looking at its definition in <code>whiley.lang.Int</code>.   The requires clause represents the expanded constraints generated from <code>[nat]</code> &mdash; namely, that every element of <code>list</code> should be non-negative.</p>
+<h3 id="resolution">Resolution</h3>
+<p>An important aspect of converting Whiley source into Wyil is <em>resolution</em>.  This is about determining what a given name in a source file actually corresponds to by looking it up in the WHILEYPATH following the given import statements.  As part of this, types and constants must be expanded into fully resolved types and constants.  For example, consider this:</p>
+<p>Light.java:</p>
+<pre><code class="language-whiley" data-lang="whiley">define Light as {
+  Point point,
+  Colour colour
+}
+
+...
+</code></pre><p>Scene.java:</p>
+<pre><code class="language-whiley" data-lang="whiley">import Light
+
+define Scene as {
+ [Light] lights,
+ [Object] objects
+}
+
+...
+
+private Colour colourAt(Light light, Point pt):
+   ...
+</code></pre><p>In order to fully resolve the type <code>Scene</code>, we must resolve the type <code>Light</code>.  This involves, firstly, determining what module <code>Light</code> is defined is (by following the <code>import</code> trail) and, secondly, what <code>Light</code>'s fully resolved type is.  Similarly, we must trawl the source code of functions (e.g. <code>colourAt</code>) and resolved any names referred to (in this case, the type of parameter <code>light</code>).</p>
+<p>Resolution is an inherently global task, since types obviously may be defined in terms of types in other modules.  Furthermore, types may be recursive across modules and modules may have dependencies going in both direction (e.g. type <code>X</code> in one module refers to type <code>Y</code> in another, whilst type <code>Z</code> in the latter refers to a type in the first, etc).</p>
+<h3 id="flow-typing">Flow Typing</h3>
+<p>The second major task faced in converting Whiley source into Wyil bytecodes is that of <em>flow typing</em>.  This is the process of determining a type for every expression and statement in the program, including all intermediate expressions used.  During this process some ambiguity between different expressions with the same syntax will be resolved (e.g. <code>x+y</code> can be either arithmetic addition, or set union &mdash; and we can only determine this when we know the types of <code>x</code> and <code>y</code>).</p>
+<p>Looking at a similar example to before, we can see roughly how flow typing proceeds:</p>
+<pre><code class="language-whiley" data-lang="whiley">real sum([real] list):
+   r = 0           // r =&gt; int, based on type of constant 0
+   for v in list:  // v =&gt; real, based on type of list
+      r = r + v   // r =&gt; real, based on type of operands
+   return r       // r =&gt; real|int, based on type of r after loop
+</code></pre><p>The key difficulty with flow-typing is that is an inherently flow-sensitive activity, which is particularly problematic in the presence of exceptions and retyping expressions (i.e. those involving <code>is</code>).</p>
+<h2 id="two-differing-approaches">Two Differing Approaches</h2>
+<p>One of the key design issues in the compiler front-end is the choice of when to convert from the source-level AST into the Wyil bytecodes.  There are essentially two main approaches:</p>
+<ul>
+<li>
+<p><strong>(Late-Generation)</strong> Here, flow-typing is performed directly on the AST which is subsequently converted into Wyil bytecodes.</p>
+</li>
+<li>
+<p><strong>(Early-Generation)</strong> Here, the AST is first converted into temporary Wyil bytecodes which are then flow-typed to produced the final bytecodes.</p>
+</li>
+</ul>
+<p>For some reason, the choice of which approach to take has caused me a lot of headaches.  I believe either can be made to work.  The issue, of course, is in finding the simplest most coherent approach.  This always seems to save me time in the long run.  One reason for this is that generation is intertwined with <em>constraint expansion</em> (that is, generating Wyil bytecodes corresponding to source-level constraints).  The main trade-offs are:</p>
+<ul>
+<li>
+<p>**Late-Generation. ** This is probably the most logical approach.  However, it is harder to properly flow-type the AST because of retyping (i.e. <code>is</code>) expressions.  On the other hand, there is potential to support retyping of complex retyping (e.g. involving records and possibly lists).  This approach also requires an awkward abstraction which I refer to the as &ldquo;unconstrained types&rdquo;.</p>
+</li>
+<li>
+<p><strong>Early-Generation.</strong> This is awkward because it requires special abstract bytecodes to encode ambiguous expressions which can only be resolved when types are known (the trickiest being related to the various kinds of method invocation).  However, flow-typing is much simplified because it operates on the unstructured intermediate language where flow-sensitive analysis is easier.  There is also no need to support the notion of an &ldquo;unconstrained type&rdquo;.  Another downs-side of this approach is that it relies on Wyil bytecodes being able to encode nominal types.  However, I want to support this anyway in order to simplify debugging Wyil code.</p>
+</li>
+</ul>
+<p>The issue of unconstrained types is slighty odd.  It stems from a separation from expanding types and expanding constraints.  For example, consider this:</p>
+<pre><code class="language-whiley" data-lang="whiley">define nat as int where $ &gt;= 0
+
+int f(nat|[int] x):
+    if x is nat:
+        return 0
+    else:
+        return |x|
+</code></pre><p>Currently, this program should (in fact) fail compilation because <code>x</code> must have type <code>int|[int]</code> on the false branch.  The notion of unconstrained types handles this by replaced all constrained types with <code>void</code> before computing the type difference on the false branch.  If the constrained was expanded before type checking this function, then there would be no need for an unconstrained type as it would be implicit.  Things get particularly awkward when we consider types in compiled libraries, since one cannot retro-actively determine the unconstrained type.  Instead, for every type, we&rsquo;ll have to embed the unconstrained version as well.</p>
+<p>Ok, that&rsquo;s it for now.  I&rsquo;m not sure how much this is helping me, but I probably need to add more of the subtle trade-offs as I remember them.</p>
+
+<hr/>
+
+
+      </div>
+    </div>
+    </div>
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-5582165-5', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+    
+  </body>
+</html>
