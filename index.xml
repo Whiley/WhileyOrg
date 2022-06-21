@@ -299,6 +299,15 @@
     </item>
     
     <item>
+      <title>Reflecting on the JVM Class File Format</title>
+      <link>https://whiley.org/2012/08/06/reflecting-on-the-jvm-class-file-format/</link>
+      <pubDate>Mon, 06 Aug 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://whiley.org/2012/08/06/reflecting-on-the-jvm-class-file-format/</guid>
+      <description>The latest release of Whiley (v0.3.16) includes (finally) a binary file format for the Whiley Intermediate Language (WYIL). You can think WYIL files are to Whiley, as class files are to Java, or CIL files are to C#.</description>
+    </item>
+    
+    <item>
       <title>Whiley v0.3.16 Released!</title>
       <link>https://whiley.org/2012/07/31/whiley-v0.3.16-released/</link>
       <pubDate>Tue, 31 Jul 2012 00:00:00 +0000</pubDate>
