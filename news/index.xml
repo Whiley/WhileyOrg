@@ -308,6 +308,16 @@
     </item>
     
     <item>
+      <title>Illustrating Compile-Time Verification in Whiley</title>
+      <link>https://whiley.org/2012/05/28/illustrating-compile-time-verification-in-whiley/</link>
+      <pubDate>Mon, 28 May 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://whiley.org/2012/05/28/illustrating-compile-time-verification-in-whiley/</guid>
+      <description>With the latest release of Whiley, compile-time checking of constraints can be enabled with a command-line switch. So, I thought a few examples of this were in order.
+Example: Absolute of an Integer Consider this simple program:</description>
+    </item>
+    
+    <item>
       <title>Whiley v0.3.15 Released!</title>
       <link>https://whiley.org/2012/05/25/whiley-v0.3.15-released/</link>
       <pubDate>Fri, 25 May 2012 00:00:00 +0000</pubDate>
