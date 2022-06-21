@@ -281,6 +281,24 @@
     </item>
     
     <item>
+      <title>Whiley v0.3.17 Released!</title>
+      <link>https://whiley.org/2012/12/07/whiley-v0.3.17-released/</link>
+      <pubDate>Fri, 07 Dec 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://whiley.org/2012/12/07/whiley-v0.3.17-released/</guid>
+      <description>Whilst it&amp;rsquo;s been over three months since the last release of Whiley, this latest release is chocked full of improvements! I&amp;rsquo;ve closed around 60 issues in that time, and have completely reworked the theorem prover from scratch.</description>
+    </item>
+    
+    <item>
+      <title>The Whiley Project on Ohloh</title>
+      <link>https://whiley.org/2012/11/19/the-whiley-project-on-ohloh/</link>
+      <pubDate>Mon, 19 Nov 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://whiley.org/2012/11/19/the-whiley-project-on-ohloh/</guid>
+      <description>Just yesterday, I came across the ohloh website for the first time and was surprised to find the Whiley project already listed there. If you haven&amp;rsquo;t seen it before, Ohloh is a site that attempts to gather stats and other information on open source projects such as: who the developers are, how many commits there are and how the line count has changed over time.</description>
+    </item>
+    
+    <item>
       <title>Whiley v0.3.16 Released!</title>
       <link>https://whiley.org/2012/07/31/whiley-v0.3.16-released/</link>
       <pubDate>Tue, 31 Jul 2012 00:00:00 +0000</pubDate>
