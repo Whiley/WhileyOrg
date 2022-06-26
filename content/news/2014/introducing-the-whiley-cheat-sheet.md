@@ -1,7 +1,7 @@
 ---
 date: 2014-08-28
 title: "Introducing the Whiley Cheat Sheet!"
-draft: true
+draft: false
 ---
 
 Recently, I created a Whiley Cheat Sheet for use in our [SWEN224 course](http://www.victoria.ac.nz/ecs/study/courses/swen-224) and I thought it was useful enough to share!  The goal of the cheat sheet is to provide some simple examples to help you get going, rather than provide a comprehensive reference.  I tried to cram as much as I could onto one piece of paper ...

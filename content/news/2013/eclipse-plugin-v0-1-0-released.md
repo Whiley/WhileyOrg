@@ -1,7 +1,7 @@
 ---
 date: 2013-11-29
 title: "Eclipse Plugin v0.1.0 Released!"
-draft: true
+draft: false
 ---
 
 After being stuck with an outdated Eclipse plugin for quite a while, I've finally released a new version of the Whiley Eclipse Plugin (Wyclipse).  This uses the latest version of the Whiley Compiler (WyC), and fixes a whole host of problems with the previous version.  Specifically:
