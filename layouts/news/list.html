@@ -2,13 +2,11 @@
 {{ $odd := false }}
 {{ $lc := "" }}
 
-<section>
+<div class="section">
 <div class="column">
-<h1>News</h1>
-</div>
-</section>
 
-<br/>
+<h1>News</h1>
+<hr/>
 
 <div class="list">
   {{ range .Paginator.Pages }}
@@ -21,5 +19,8 @@
 </div>
 
 {{ template "_internal/pagination.html" . }}
+
+</div>
+</div>
 
 {{ end }}

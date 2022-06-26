@@ -9,6 +9,8 @@ draft: false
 
 # Learn
 
+----
+
 Having [installed](../install) Whiley, you can run your first program like so:
 
 ```
@@ -52,6 +54,8 @@ A few other useful links:
    * **Discord Server**.  There is also a [Discord server](https://discord.gg/7TmmeU8u) which are welcome to join!
    
    * **Request for Comments (RFCs)**.  The RFC process mirrors that used by Rust, and provides interesting reading around the history of the language.  [[GitHub]](https://github.com/Whiley/RFCs/)
+
+----
 
 {{% /column %}}
 {{< /section >}}

@@ -4,41 +4,38 @@ date: 2017-10-13T20:31:39-05:00
 draft: false
 ---
 
-{{< section>}}
-<div class="column">
-<h1>Install</h1>
-</div>
-{{</section>}}
+{{< section >}}
+{{% column %}}
 
-{{<section>}}
-<div class="column">
+# Install
 
-Whiley is currently written in a combination of <a
-href="https://rust-lang.org/">Rust</a> and <a
-href="https://www.java.com/">Java</a>.  This is for legacy reasons,
-since the compiler was originally written in Java and is now being
-migrated to Rust.  <b>As such you need to have Java installed on your
-machine.</b>
+----
+
+Whiley is currently written in a combination of
+[Rust]("https://rust-lang.org/") and [Java](https://www.java.com/").
+This is for legacy reasons, since the compiler was originally written
+in Java and is now being migrated to Rust.  <b>As such you need to
+have Java installed on your machine.</b>
 
 The simplest way to install Whiley is through Cargo (see instructions
-for installing via <code>rustup</code> <a
-href="https://www.rust-lang.org/tools/install">here</a>).  To install
-Whiley, run <code>cargo</code> as follows:
+for installing via `rustup`
+[here](https://www.rust-lang.org/tools/install")).  To install Whiley,
+run `cargo` as follows:
 
-<pre>> cargo install whiley</pre>
+```
+> cargo install whiley
+```
 
 This will download and compile the latest version of Whiley (note this
-also requires <code>libssl-dev</code> is installed).  You can then
-test your installation as follows:
+also requires `libssl-dev` is installed).  You can then test your
+installation as follows:
 
-<pre>> wy</pre>
+```
+> wy
+```
 
 You should then see information about the various commands you can run
-(e.g. <code>build</code>).  See the <a href="/learn">getting started</a>
-guide for what to do next.
-
-</div>
-{{</section>}}
+(e.g. `build`).  See the [getting started](/learn) guide for what to do next.
 
 <!--
 {{<section class="alternate">}}
@@ -71,3 +68,8 @@ guide for what to do next.
 </div>
 {{</section>}}
 -->
+
+----
+
+{{% /column %}}
+{{< /section >}}
