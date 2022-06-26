@@ -61,6 +61,7 @@ html, body {
 }
 .alternate {  
     background: #f7f5ed;
+    text-align: center;
 }
 .section {  
     display: flex;

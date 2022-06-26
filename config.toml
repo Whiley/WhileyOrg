@@ -9,3 +9,6 @@ pygmentsStyle =  "manni"
 
 [permalinks]
 news = "/:year/:month/:day/:title/"
+
+[markup.goldmark.renderer]
+unsafe=true
