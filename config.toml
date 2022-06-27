@@ -5,10 +5,14 @@ googleAnalytics = "UA-5582165-5"
 paginate = 10
 enableRobotsTXT = true
 summaryLength = 30
-pygmentsStyle =  "manni"
 
 [permalinks]
 news = "/:year/:month/:day/:title/"
 
+[markup]
+
 [markup.goldmark.renderer]
 unsafe=true
+
+[markup.highlight]
+noClasses=false

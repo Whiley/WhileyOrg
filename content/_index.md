@@ -3,7 +3,6 @@ draft: false
 banner: "A language for writing correct software!"
 ---
 {{<section class="banner">}}
-
 {{% column %}}
 # Whiley
 ### Creating high integrity software at scale.
@@ -12,9 +11,6 @@ banner: "A language for writing correct software!"
 
 {{% column %}}
 ```Whiley
-/**
- * Compute the maximum value of two integers
- */
 function max(int x, int y) -> (int r)
 // Ensure return not smaller than parameters
 ensures (r >= x) && (r >= y)
@@ -78,6 +74,7 @@ web applications, smart contracts, embedded systems and more.
 {{% column %}}
 
 ### Features
+<div class="ticklist">
 
    * **Specification.** Unlike most other programming languages, Whiley provides first-class support for specifying functions using preconditions and postconditions.
 
@@ -88,7 +85,8 @@ web applications, smart contracts, embedded systems and more.
    * **Automated Testing.** Whiley supports automated testing (in the style of QuickCheck) to quickly check for errors and other problems.
 
    * **Package Management.** Whiley has a small but growing selection of packages developed in the community.  The Whiley build tool allows you to easily manage your dependencies and distribute libraries.
-   
+
+</div>
 {{% /column %}}
 {{</section>}}
 
