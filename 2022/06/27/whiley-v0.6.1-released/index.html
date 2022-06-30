@@ -1,0 +1,63 @@
+<!doctype html><html lang=en><head><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><meta property="og:url" content="https://whiley.org/2022/06/27/whiley-v0.6.1-released/"><title>Whiley
+(Whiley v0.6.1 Released!)</title><script type=text/javascript src=js/ace.js></script>
+<script type=text/javascript src=js/mode-whiley.js></script>
+<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css><link rel=stylesheet href=https://whiley.org/css/page.css><link rel=stylesheet href=https://whiley.org/css/menu.css><link rel=stylesheet href=https://whiley.org/css/style.css><link rel=stylesheet href=https://whiley.org/css/syntax.css></head><body><script>"use strict";function clearMenu(){var e,t,n=window.matchMedia("(max-width: 992px)");n.matches&&(e=document.getElementById("menu-content"),t=document.getElementById("menu"),e.style.display="none",t.style.filter="")}function toggleMenu(){var e,t,n=window.matchMedia("(max-width: 992px)");n.matches&&(e=document.getElementById("menu-content"),t=document.getElementById("menu"),e.style.display==="block"?(e.style.display="none",t.style.filter=""):(e.style.display="block",t.style.filter="brightness(0.8)"))}function toggleList(e){e.style.display="none";for(var t,o=e.parentNode,s=o.childNodes,n=0;n<s.length;++n)t=s[n],t.classList&&t.classList.contains("hidden")&&(t.style.display==="block"?t.style.display="none":t.style.display="block")}</script><div class=page><header class=topbar><div class=topbar-title><a href=https://whiley.org/><div class=logo>Wy</div></a></div><div class=topbar-sep></div><div class=topbar-menu><div id=menu onclick=toggleMenu()><div id=menu-icon><img src=https://whiley.org/images/menu.png alt=Menu></div><div id=menu-content><a href=https://whiley.org/news/>News</a>
+<a href=https://whiley.org/install/>Install</a>
+<a href=https://whiley.org/learn/>Learn</a>
+<a href=http://whileylabs.com>Playground</a></div></div></div></header><div class=container><div class=content><div class=section><div class=column><h1>Whiley v0.6.1 Released!</h1><div class=post-date>Monday, June
+27th,
+2022</div><hr><p>Finally, after almost a year since the last release, we have two new releases of Whiley! <code>v0.6.0</code> was released on <a href=https://crates.io/crates/whiley/versions>June 1st 2022</a>, and was quickly followed by <code>v0.6.1</code> which included an important bug fix. The main difference is that Whiley is now partly written in Rust and deployed using <code>cargo</code> (see <a href=/install>install</a> for details).</p><h2 id=change-log>Change Log</h2><p>A summary of the main changes since <code>v0.5.3</code>:</p><ul><li><p><strong>Improved Verification</strong>. Verification in Whiley continues to get stronger with further improvements to the Boogie backend (see <a href=https://whileydave.com/2022/05/31/whiley-gets-rusty/>this post</a> and <a href=https://whileydave.com/publications/pug22_jar/>our paper</a> for more info). The Boogie backend is now the default verification toolchain and passes >95% of tests.</p></li><li><p><strong>Command-Line Tool</strong> (<a href=https://github.com/Whiley/WhileyBuildTool>Repo</a>). The command-line tool <code>wy</code> for building and verifying Whiley programs is now <a href=https://whileydave.com/2022/05/31/whiley-gets-rusty/>written in Rust</a>. In essence, this provides a wrapper around the existing Java components (see <a href=https://whileydave.com/2022/05/31/whiley-gets-rusty/>this post</a> for more). This also adds support for the commands <code>clean</code> (<a href=https://github.com/Whiley/WhileyCompiler/issues/1092>#1092</a>) and <code>init</code> (<a href=https://github.com/Whiley/WhileyBuildTool/issues/26>#26</a>), amongst other things.</p></li><li><p><strong>Old Syntax</strong> (<a href=https://github.com/Whiley/WhileyCompiler/issues/1096>#1096</a>). The ability to reason about heap structures has improved dramatically and, in particular, now supports <code>old()</code> syntax (following <a href=http://www.jmlspecs.org/index.shtml>JML</a>, <a href=https://github.com/dafny-lang/dafny>Dafny</a> and similar systems). This gives the ability to reason about the state of the heap prior to a method:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-whiley data-lang=whiley><span class=line><span class=cl><span class=kd>method</span> <span class=n>inc</span><span class=p>(</span><span class=o>&amp;</span><span class=kt>int</span> <span class=n>x</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=k>ensures</span> <span class=n>old</span><span class=p>(</span><span class=o>*</span><span class=n>x</span><span class=p>)</span> <span class=o>&lt;</span> <span class=o>*</span><span class=n>x</span><span class=o>:</span>
+</span></span><span class=line><span class=cl>  <span class=o>*</span><span class=n>x</span> <span class=o>=</span> <span class=o>*</span><span class=n>x</span> <span class=o>+</span> <span class=mi>1</span>
+</span></span></code></pre></div><p>Here, <code>old(*x) &lt; *x</code> effective says that the value at <code>*x</code> must
+increase after calling this method. See <a href=https://github.com/Whiley/RFCs/blob/master/text/0067-old-values.md>RFC#67</a> for further discussion</p></li><li><p><strong>Property Syntax</strong> (<a href=https://github.com/Whiley/WhileyCompiler/issues/1102>#1102</a>, <a href=https://github.com/Whiley/WhileyCompiler/issues/1151>#1151</a>, <a href=https://github.com/Whiley/WhileyCompiler/issues/1157>#1157</a>). The syntax for properties has become more expressive with the ability to specify the return value, and use <code>if</code> statements and variable declarations within the body:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-whiley data-lang=whiley><span class=line><span class=cl><span class=kd>property</span> <span class=n>sum</span><span class=p>(</span><span class=kt>int</span><span class=p>[]</span> <span class=n>xs</span><span class=p>,</span> <span class=kt>int</span> <span class=n>i</span><span class=p>)</span> <span class=o>-&gt;</span> <span class=p>(</span><span class=kt>int</span> <span class=n>r</span><span class=p>)</span><span class=o>:</span>
+</span></span><span class=line><span class=cl>  <span class=k>if</span> <span class=n>i</span> <span class=o>&lt;</span> <span class=mi>0</span> <span class=o>||</span> <span class=n>i</span> <span class=o>&gt;=</span> <span class=o>|</span><span class=n>xs</span><span class=o>|:</span>
+</span></span><span class=line><span class=cl>    <span class=k>return</span> <span class=mi>0</span>
+</span></span><span class=line><span class=cl>  <span class=k>else</span><span class=o>:</span>
+</span></span><span class=line><span class=cl>    <span class=k>return</span> <span class=n>xs</span><span class=p>[</span><span class=n>i</span><span class=p>]</span> <span class=o>+</span> <span class=n>sum</span><span class=p>(</span><span class=n>xs</span><span class=p>,</span><span class=n>i</span><span class=o>+</span><span class=mi>1</span><span class=p>)</span>
+</span></span></code></pre></div><p>See <a href=https://github.com/Whiley/RFCs/blob/master/text/0102-property-syntax.md>RFC#102</a> for further discussion (though note the implement syntax differs somewhat).</p></li><li><p><strong>Exponentiation Operator</strong> (<a href=https://github.com/Whiley/WhileyCompiler/issues/1124>#1124</a>). Support has been added for the exponentiation operator <code>x ** y</code> which returns <code>x</code> to the power of <code>y</code>. Thus, for example, <code>2 ** 4</code> returns <code>16</code>. A precondition of this operator is that <code>y</code> cannot be negative.</p></li><li><p><strong>Test File Format</strong> (<a href=https://github.com/Whiley/WhileyCompiler/issues/978>#978</a>, <a href=https://github.com/Whiley/WhileyCompiler/issues/1149>#1149</a>).
+A new test file format has been developed for improved testing of
+the compiler. This now allows a single test to describe multiple
+files and offers a dynamic view of files. That is, a single test
+can test a file followed by <em>changes to that file</em>. The following
+illustrates such a test:</p><pre tabindex=0><code>====
+&gt;&gt;&gt; main.whiley
+function f(int x, int y) -&gt; int:
+  return x ** y
+
+public export method test():
+  assume f(2,-1) == 2
+---
+E713 main.whiley 2,15
+E730 main.whiley 2,15
+====
+&gt;&gt;&gt; main.whiley 5:6
+  assume f(2,1) == 2
+  assume f(2,2) == 4
+---
+E730 main.whiley 2,15
+=====
+&gt;&gt;&gt; main.whiley 1:2
+function f(int x, int y) -&gt; int
+requires y &gt;= 0:
+---
+</code></pre><p>This test proposes an initial file <code>main.whiley</code> that should
+produce errors <code>E713</code> and <code>E730</code> upon compilation. Then, in the next
+frame, the file is updated by replacing line <code>5</code> with two lines &mdash;
+after which a compile error (<code>E730</code>) should still be reported. The
+final frame introduces a precondition to function <code>f</code> which prevents
+an error being reported that <code>y</code> could be negative in <code>x ** y</code>. See
+also <a href=https://github.com/Whiley/RFCs/blob/master/text/0110-test-file-format.md>RFC#110</a> for a more in depth
+discussion.</p></li><li><p><strong>Array/Record Update Operator</strong> (<a href=https://github.com/Whiley/WhileyCompiler/issues/1129>#1129</a>). The
+<em>array update</em> <code>xs[x:=y]</code> and <em>record update</em> <code>r[f:=x]</code> operators
+have been added for use within specification elements
+(e.g. <code>requires</code> clauses) and <code>property</code> declarations.</p></li><li><p><strong>Unsafe Syntax</strong> (<a href=https://github.com/Whiley/WhileyCompiler/issues/1093>#1093</a>). A new modifier <code>unsafe</code>
+is now supported, though some questions remain over its semantic.
+Currently, it indicates that a <code>function</code> or <code>method</code> should not be
+verified (hence, it is unsafe). Calling <code>unsafe</code> methods or
+functions does not require the caller is <code>unsafe</code>. However, a
+<code>strict</code> mode can be enabled which does enforce this stricter
+requirement.</p></li><li><p><strong>Bug Fixes</strong> (e.g. <a href=https://github.com/Whiley/WhileyCompiler/issues/1132>#1132</a>, <a href=https://github.com/Whiley/WhileyCompiler/issues/1142>#1142</a>,
+<a href=https://github.com/Whiley/WhileyCompiler/issues/1128>#1128</a>, <a href=https://github.com/Whiley/WhileyCompiler/issues/1120>#1120</a>, <a href=https://github.com/Whiley/WhileyCompiler/issues/1103>#1103</a>,
+<a href=https://github.com/Whiley/WhileyCompiler/issues/1101>#1101</a>, <a href=https://github.com/Whiley/WhileyCompiler/issues/1097>#1097</a>, <a href=https://github.com/Whiley/WhileyCompiler/issues/1098>#1098</a>). As usual there have been plenty of bug fixes, and
+I&rsquo;ve only included a sample of them to the left.</p></li></ul><hr></div></div></div><script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(e,t,n,s,o,i,a){e.GoogleAnalyticsObject=o,e[o]=e[o]||function(){(e[o].q=e[o].q||[]).push(arguments)},e[o].l=1*new Date,i=t.createElement(n),a=t.getElementsByTagName(n)[0],i.async=1,i.src=s,a.parentNode.insertBefore(i,a)}(window,document,"script","https://www.google-analytics.com/analytics.js","ga"),ga("create","UA-5582165-5","auto"),ga("send","pageview"))</script></body></html>
