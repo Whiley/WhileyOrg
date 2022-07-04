@@ -1,1 +1,7 @@
+{{if (.Get "center")}}
+<center>
+{{end}}  
 <iframe {{if (.Get "class")}}class="{{(.Get "class")}}"{{else}}class="youtube"{{end}} src="https://www.youtube.com/embed/{{.Params.id}}" {{if (.Get "width")}}width="{{.Params.width}}"{{end}} {{if (.Get "height")}}height="{{.Params.height}}"{{end}} frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+{{if (.Get "center")}}
+</center>
+{{end}}  
