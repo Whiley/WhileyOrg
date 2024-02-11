@@ -1,7 +1,7 @@
 baseURL = "https://whiley.org/"
 languageCode = "en-nz"
 title = "Whiley Homepage"
-googleAnalytics = "UA-5582165-5"
+googleAnalytics = "G-595YEBLV7C"
 paginate = 10
 enableRobotsTXT = true
 summaryLength = 30
